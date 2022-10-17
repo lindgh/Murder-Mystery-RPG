@@ -17,7 +17,7 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two to three scrum/check-in meetings with your lab TA/reader at different times in addition to the final demo.
 
 ## Project Description
- > Our project will include:
+ > Key project points:
  > * We all enjoy horror and coding, so we think it would be interesting to see how we can use our knowledge of coding so far to implement a text-based roleplay game based on a topic we all enjoy.
  > * We plan to implement our project on Virtual Studio Code in the C++ language. We'll utilize CMake.
  > * Input and output will be on a terminal.
