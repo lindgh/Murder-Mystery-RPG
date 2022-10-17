@@ -20,7 +20,7 @@
  > Key project points:
  > * We all enjoy horror and coding, so we think it would be interesting to see how we can use our knowledge of coding so far to implement a text-based roleplay game based on a topic we all enjoy.
  > * We plan to implement our project on Virtual Studio Code in the C++ language. We'll utilize CMake.
- > * Input and output will be on a terminal.
+ > * The user will use their keyboard to provide input, and output will be displayed on the terminal.
  > * Features our project will provide include an immersive storyline, interactivity with the environment, an inventory, different characters, character actions and abilities.
  
  
