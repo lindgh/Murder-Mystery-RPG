@@ -1,13 +1,15 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=8910715&assignment_repo_type=AssignmentRepo)
 
 # Murder Mystery RPG
- > Authors: \<[Rawan Hassabelrasoul](https://github.com/rawanhass), [Angela Han](https://github.com/AngelaHan1), [Adlai Morales-Bravo](https://github.com/AdlaiMB), [Linda Ghunaim](https://github.com/lindgh)\>
+ > Authors: [Rawan Hassabelrasoul](https://github.com/rawanhass), [Angela Han](https://github.com/AngelaHan1), [Adlai Morales-Bravo](https://github.com/AdlaiMB), [Linda Ghunaim](https://github.com/lindgh)
 
 ## Project Description
+ > Synopsis: In this choose your own adventure story, you'll embark on a mission to unmask the killer that has been terrorizing your town. You'll get to customize your character and make decisions that could lead you to victory or death. 
+
  > Key project points:
  > * We all enjoy horror and coding, so we think it would be interesting to see how we can use our knowledge of coding so far to implement a text-based roleplay game based on a topic we all enjoy.
  > * We plan to implement our project on Virtual Studio Code in the C++ language. We'll utilize CMake.
- > * The user will use their keyboard to provide input, and output will be displayed on the terminal.
+ > * The user will use their keyboard to provide input when prompted. For example, when prompted to choose a character, the output will tell the use what kind of input it is expected for each character. So if the output tells the user to type 1 to select the character Buffy, the user must input 1 to select that character. We will also validate the user's input to ensure that valid inputs are being provided. Besides giving instructions to the user on how to interact with the program, the output will also be our mode of storytelling through text on the terminal. 
  > * Features our project will provide include an immersive storyline, interactivity with the environment, an inventory, different characters, character actions and abilities.
  
  > ## Phase II
