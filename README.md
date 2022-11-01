@@ -13,9 +13,11 @@
  > * Features our project will provide include an immersive storyline, interactivity with the environment, a journal to read from and write to.
  
  > ## Phase II
-## Class Diagram
- > Description: 
+## Class Diagram 
 ![UML Design](./uml_project.png)
+
+ > ### Description:
+ > Withing our UML diagram we have five major components that will be used to build our game. These components are Story, Detective, Journal, Tree, and Node. The Story object is the container for our story. It holds operations for interacting and displaying the story. The Tree object will be an implementation for a tree data structure. It has functions to manually traverse and build the tree. The Story object will leverage the properties of the Tree object to organize and story. The Node object will be the container for sections of our game story. The Detective object represents the user. It will contain functions for user actions, such as interacting with the Journal object and Story object. The Journal object will be used for storing user notes and will have operations to interact with the notes taken down, such as reading and writing. 
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
