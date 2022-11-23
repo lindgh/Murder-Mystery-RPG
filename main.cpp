@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "header/Locations.hpp"
-#include "header/OpeningScene.hpp"
+//#include "header/OpeningScene.hpp"
 #include "header/Motel.hpp"
 
 using namespace std;

@@ -73,61 +73,43 @@ string Motel::exploreRoom(){
     cout << "You walk into room 203. The room is empty thankfully. Whoever was here however, "
     "left the room in disarray.\n";
     
-    while (choice != -999){ //will change flag later
+    //initial menu, will change in switch statement
     cout << "What would you like to do in this room?\n";
     cout << "Enter '1' to explore the bathroom\n";
     cout << "Enter '2' to investigate the table with drawers\n";
     cout << "Enter '3' to investigate the nightstand next to the bed";
     cout << "\nEnter your choice: ";
 
-    Location::validateInput(choice, 3,1);
+    Location::validateInput(choice, 3,1); //validate input first
 
 
+    while( "something does not equal to exit"){ 
      switch (choice){
-
+            case 1: exploreBathroom();
+            break;
+            case 2: exploreDrawers();
+            break;
+            case 3: exploreNightStand();
+            break;
+            // case 4:  //need to think about this one, kinda sketchy...
+            // break;
         }
 
-
-
+        //display menu
     }
 
     return "";
 }
 
+void Motel::exploreBathroom(){
 
+}
 
-// //Will move to another class, but here for now for testing purposes
-// //helper function to validate integer input
-// void Motel::validateInput(int& input, int max, int min){
+void Motel::exploreDrawers(){
 
-//     bool invalid;
-//     int num;
-//      do
-//         {
-//             cin >> num;
-//             //checks to make sure a char value was not entered.
-// 			while (cin.fail()) //returns true if input failure occurs
-// 			{
-// 				cin.clear(); 
-// 				cin.ignore();
-// 				cout << "Error, please enter an integer: ";
-//                 cin >> num;
-// 			}
+}
 
-//         //at this point, know that userInput is a number
-//         invalid =  num < min || num > max;
-// 			if (invalid && num < 0)
-// 			{
-// 				cout << "Please enter a number greater than 0: ";
-// 			}else if (invalid){
-//                 // cout << "Please enter a number in the range 1 - 3: ";
-//                 cout << "Please enter a number in the range " << min  << " - "
-//                      << max << ": ";
-//             }
+void Motel::exploreNightStand(){
 
+}
 
-       
-//         }while(invalid); //Will validate that userInput is not a char, and 
-//                         // within bounds of menu options.
-//         input = num; //at this point, num would be valid.
-// }

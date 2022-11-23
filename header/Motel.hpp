@@ -17,14 +17,22 @@ public:
     // bool insertClue(string);       // insert a clue into the cluse vector
     virtual void playScene(); // needes to be implemented for each sub class
 
-// private:
-//     string name;            // store the name of the location
-//     bool clueFound;         // store whether or not the clue was found out
-//     vector<string> clues(); // store the clues in this location
 
+    //outer functions that if left, go back to playScene function
+    //might be changing back to void, we will see
     string exploreRoom();
     string goToMyRoom();
+
+    //-----functions to explore INSIDE exploreRoom only----
+    void exploreBathroom();
+    void exploreDrawers();
+    void exploreNightStand();
+    //-----------------------------------------------------
+
     void validateInput(int& input, int max, int min);
+
+
+
 
 
 private:
