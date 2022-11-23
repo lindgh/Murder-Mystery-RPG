@@ -8,9 +8,14 @@ using namespace std;
 
 int main() {
 
-    cout << "in main" << endl;
+    //Testing motel object
     Motel m;
     m.playScene();
+
+    cout <<"\n\nExited Motel Location\n\n";
+
+
+    //After exiting playScene, call menu class for location, to get next location 
 
     return 0;
 }

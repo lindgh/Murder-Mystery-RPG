@@ -20,34 +20,22 @@ public:
 
     //outer functions that if left, go back to playScene function
     //might be changing back to void, we will see
-    string exploreRoom();
-    string goToMyRoom();
+    void exploreRoom();
+    void goToMyRoom();
 
     //-----functions to explore INSIDE exploreRoom only----
     void exploreBathroom();
     void exploreDrawers();
     void exploreNightStand();
+    void exitRoom203AfterExplore();
     //-----------------------------------------------------
 
-    void validateInput(int& input, int max, int min);
-
-
-
+    //void validateInput(int& input, int max, int min);
 
 
 private:
 
     string name = "Motel"; //stores the name of this location
-
-
-    string promptPlayer = "What would you like to do?";
-    string userInput = "";
-    string exitflag = "exitLocation";
-
-
-
-
-
 
 };
 
