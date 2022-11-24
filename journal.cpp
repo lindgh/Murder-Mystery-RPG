@@ -4,8 +4,10 @@
 #include<iomanip>
 using namespace std;
 
-string newEntry(string entry1, int userID);
-void viewEntry(string entry1, int userID);
+string writeJournal(string entry1, int userID);
+
+void readJournal(string entry1, int userID);
+
 int main()
 {
 	int ch;
@@ -16,9 +18,9 @@ int main()
 	{
 		system("cls");
 		cout<<"\n\n\n\tMAIN MENU";
-		cout<<"\n\n\t01. NEW JOURNAL ENTRY";
-		cout<<"\n\n\t02. VIEW JOURNAL ENTRIES";
-		cout<<"\n\n\t03. EXIT";
+		cout<<"\n\n\t 1. NEW JOURNAL ENTRY";
+		cout<<"\n\n\t 2. VIEW JOURNAL ENTRIES";
+		cout<<"\n\n\t 3. EXIT";
 		cout<<"\n\n\tSelect Your Option (1-3) ";
 		cin>>ch;
 		system("cls");
@@ -42,20 +44,20 @@ int main()
 	return 0;
 }
 
-string newEntry(string entry1, int userID)
+string writeJournal(string entry1, int userID)
 {
-	ofstream outFile;
-	outFile.open("journal.txt");
-	if (outFile.fail())
+	ofstream jourFile;
+	jourFile.open("journal.txt");
+	if (jourFile.fail())
 	{
 		cout << "Error could not open file.";
 		return entry1;
 	}
-	int pw;
+	int token;
 	cout << "Enter your userID: \n";
-	cin >> pw;
+	cin >> token;
 	cin.ignore();
-	if(pw == userID)
+	if(token == userID)
 	{
   
 	cout << "Whats on your mind\n\t" << endl;
@@ -73,14 +75,14 @@ string newEntry(string entry1, int userID)
 
 void viewEntry(string entry1, int userID)
 {
-	int pw;
+	int token;
 	cout << "Enter your userID:\n";
-	cin >> pw;
-	if(pw == userID)
+	cin >> token;
+	if(token == userID)
 	{
-	ifstream inFile;
+	ifstream jFile;
 	inFile.open("journal.txt");
-	if(!inFile)
+	if(!jFile)
 	{
 		cout<<"File could not be open !! Press any Key...";
 		return;
