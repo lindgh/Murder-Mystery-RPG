@@ -2,8 +2,13 @@
 
 #include "../header/Locations.hpp"
 #include "../header/OpeningScene.hpp"
+#include "../header/Detective.hpp"
 
-TEST(OpeningScene, playScene)
+TEST(OpeningSceneTests, playScene)
 {
-    //something
+    Detective *d = new Detective();
+    OpeningScene o;
+    EXPECT_NO_THROW(o.playScene(d));
+
+    delete d;
 }
