@@ -58,7 +58,7 @@ void Location::validateInput(int& input, int max, int min){
 			while (cin.fail()) //returns true if input failure occurs
 			{
 				cin.clear(); 
-				cin.ignore();
+				cin.ignore(50, '\n');
 				cout << "Error, please enter an integer: ";
                 cin >> num;
 			}

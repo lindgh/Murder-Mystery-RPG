@@ -1,4 +1,4 @@
-#include "../header/Motel.hpp"
+#include "../header/PearlsTaxidermy.hpp"
 #include <iostream>
 #include <vector>
 #include <bits/stdc++.h>
@@ -6,62 +6,95 @@ using namespace std;
 
 
 
-void Motel::playScene(){ 
+void PearlsTaxidermy::playScene(){ 
     int choice;
 
-    
-        cout << "You arrive at the mostly deserted motel and make your way up the creaky stairs. " <<
-                "As you pass the halls, you look for room 204. \n201 \n202 \n203. You suddenly " <<
-                "get a strong whiff of bleach. That is odd. This room's door is left ajar. And your room " <<
-                "is just past it.\n\n";
-        cout << "Would you like to do?\n";
-        cout << "Enter '1' to explore room 203\n";
-        cout << "Enter '2' to continue to your room\n";
-        cout << "\nEnter your choice: ";
+    cout << "You make your way into Pearl's Taxidermy shop. The air feels stale, and you feel as "
+         << "though the beady dead eyes of the mounted animals along the walls are watching your "
+         << "every move. While this place is unsettling, curiosity gets the best of you. After all, "
+         << " the vitcims are connected one way or another to this place...\n\n";
 
-        //validate input
-        Location::validateInput(choice,2,1);
+    cout << "Would you like to do?\n";
+    cout << "Enter '1' to Approach the counter\n";
+    cout << "Enter '2' to Go to the wall full of pictures\n";
+    cout << "Enter '3' to Talk to the lady shelving some items\n";
+    cout << "Enter '4' to Leave Pearl's Taxidermy\n";
+    cout << "\nEnter your choice: ";
 
+    //validate input
+    Location::validateInput(choice,4,1);
+
+    while( choice != 4){
         switch (choice){
-            case 1: exploreRoom();
+            case 1: investigateCounter();
             break;
-            case 2: goToMyRoom();
+            case 2: investigateWallOfPictures();
+            break;
+            case 3: investigateEmployee();
             break;
         }
 
+        cout << "\n\nWould you like to do now?\n";
+        cout << "Enter '1' to Approach the counter\n";
+        cout << "Enter '2' to Go to the wall full of pictures\n";
+        cout << "Enter '3' to Talk to the lady shelving some items\n";
+        cout << "Enter '4' to Leave Pearl's Taxidermy\n";
+        cout << "\nEnter your choice: ";
+        Location::validateInput(choice,4,1);
+
+    }//end while
+
+    if(choice == 4){
+        LeaveStore();
+    }
+
     //testing purpose
-    cout <<"\n exiting motel location...";
+    cout <<"\n\n exiting Pearl's Taxidermy location...";
     cout <<"\nPress any key to continue";
     cin.ignore();
 
-    
 }
 
-void Motel::goToMyRoom(){
+
+
+void PearlsTaxidermy::investigateCounter(){
     //clear terminal 
     system("clear");
-    cout << "Someone probably forgot to close their door. Maybe minding your business is for the "
-            "best... You make your way to your room and take a rest...\n";
+    cout << "You go to the counter, and see the log book of all the customers open. Guess Pearl's "
+         << "Taxidermy has had a slow year, since you can see all of the purchases made for the whole year on "
+         << "one page so far.\n\n";
+
+    cout << "Scanning through it, you sure see all the victems' names on it. However, you notice that "
+         << "they have a black cross next to their names. Hmmm, strange...\n\n";
 
             //flag here to stop
     cout << "Press any key to continue";
     cin.ignore();
 
-    //here, if we are still doing count for number of days, will display ---------------------------------------
-
 }
 
-void Motel::exitRoom203AfterExplore(){
+
+
+void PearlsTaxidermy::investigateWallOfPictures(){
+    //clear terminal 
     system("clear");
-    cout << "After exploring room203, you decide to head to your own room.\n"
-         << "best to rest up for more investigating later...\n";
+    cout << "On the right side of the store, you see a wall of pictures decorating the place. Upon "
+         << "further investigation, you see pictures of the town folks, some of them funny, and others "
+         << "of clients with their purchases from here.\n\n";
+
+    cout << "In one of them, there is a photo of Pearl and Arthur laughing, with Arthur eating a cinnamon "
+         << "bun. It looks like the one from the Leaky Diner.\n\n";
+
+    cout << "However, you see one photo that catches your eye. It is of Pearl working on a stuffed animal. But "
+         << "what catches your eye is in the background. In the far left corner of the picture, it looks as though Mr. Manson "
+         << "was yelling at Robert about something.\n\n";
 
             //flag here to stop
     cout << "Press any key to continue";
     cin.ignore();
 
-
 }
+
 
 //once here, after exploring, "force player to go to their room."
 void Motel::exploreRoom(){
@@ -84,9 +117,9 @@ void Motel::exploreRoom(){
 
     while(choice != 4){ 
      switch (choice){
-            case 1: exploreBathroom();
+            case 1: exploreBathroom(); //
             break;
-            case 2: exploreDrawers();
+            case 2: exploreDrawers(); //
             break;
             case 3: exploreNightStand();
             break;
@@ -160,4 +193,3 @@ void Motel::exploreNightStand(){
     cin.ignore();    
 
 }
-
