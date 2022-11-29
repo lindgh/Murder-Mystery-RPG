@@ -31,7 +31,7 @@ void Location::validateInput(int &input, int max, int min)
 
     } while (invalid); // Will validate that userInput is not a char, and
                        //  within bounds of menu options.
-    input = num; // at this point, num would be valid.
+    input = num;       // at this point, num would be valid.
 }
 
 void Location::continuePrompt()
