@@ -38,7 +38,7 @@ void Choice::displayOutput()
     cout << output << endl;
 }
 
-int Choice::getResultSize()
+int Choice::getResultsSize()
 {
     return results.size();
 }

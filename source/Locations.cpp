@@ -2,7 +2,6 @@
 
 void Location::validateInput(int &input, int max, int min)
 {
-
     bool invalid;
     int num;
     do
@@ -12,7 +11,7 @@ void Location::validateInput(int &input, int max, int min)
         while (cin.fail()) // returns true if input failure occurs
         {
             cin.clear();
-            cin.ignore();
+            cin.ignore(50, '\n');
             cout << "Error, please enter an integer: ";
             cin >> num;
         }
@@ -35,7 +34,17 @@ void Location::validateInput(int &input, int max, int min)
     input = num;       // at this point, num would be valid.
 }
 
-void Location::setName(string name)
+void Location::continuePrompt()
 {
-    this->name = name;
+    cout << "[Enter anything to continue]\n";
+    cin.clear();
+    cin.ignore(50, '\n');
+    cout << "\n-----\n\n";
+}
+
+void Location::clearStream()
+{
+    cin.clear();
+    cin.ignore();
+    cout << "\n-----\n";
 }

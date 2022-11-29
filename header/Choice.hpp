@@ -19,7 +19,7 @@ public:
     void setPrompt(string);
     void setOutput(string);
     void setResult(string, Choice *);
-    int getResultSize();
+    int getResultsSize();
     Choice *getResult(int);
 
 private:

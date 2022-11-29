@@ -71,7 +71,7 @@ void CountryClub::setDecisions()
 
             cout << "\nEnter your choice: ";
 
-            validateInput(option, choie->getResultsSize() - 1, 0);
+            validateInput(option, choice->getResultsSize() - 1, 0);
 
             clearStream();
 
