@@ -18,7 +18,6 @@ public:
     void clearStream();
 
 private:
-    string userInput; // used for menu options
     string name;
 };
 

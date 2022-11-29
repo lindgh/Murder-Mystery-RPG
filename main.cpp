@@ -6,6 +6,8 @@
 #include "header/Motel.hpp"
 #include "header/PearlsTaxidermy.hpp"
 #include "header/Story.hpp"
+#include "header/Hollands.hpp"
+#include "header/OpeningScene.hpp"
 
 using namespace std;
 
