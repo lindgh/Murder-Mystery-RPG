@@ -5,18 +5,24 @@
 #include "header/Detective.hpp"
 #include "header/Motel.hpp"
 #include "header/PearlsTaxidermy.hpp"
+#include "header/Story.hpp"
 
 using namespace std;
 
 int main() {
 
-    Detective *d;
+    Detective *d = new Detective(); //create player
+
+    //being game
+    Story startGame;
+    startGame.buildStory(d);
+
     // Motel m;
     // m.playScene(d);
-    PearlsTaxidermy pt;
-    pt.playScene(d);
+    // PearlsTaxidermy pt;
+    // pt.playScene(d);
 
-    // delete d;
+    delete d;
 
     return 0;
 
