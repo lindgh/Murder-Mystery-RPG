@@ -3,20 +3,22 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
+#include "../header/Detective.hpp"
 
 using namespace std;
 
 class Location
 {
 public:
-    virtual void playScene() = 0; // needes to be implemented for each sub class
+    virtual void playScene(Detective *aDetective) = 0; // needes to be implemented for each sub class
     void validateInput(int &input, int max, int min);
-    void setName(string);
+    void continuePrompt();
+    void clearStream();
 
 private:
-    string name;    // store the name of the location
-    bool clueFound; // store whether or not the clue was found out
-    string userInput;
+    string userInput; // used for menu options
+    string name;
 };
 
-#endif // RECTANGLE_HPP
+#endif // LOCATIONS_HPP
