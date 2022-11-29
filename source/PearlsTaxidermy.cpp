@@ -215,6 +215,5 @@ void PearlsTaxidermy::gameOver(){
     cout <<"Press any key to continue";
     cin.ignore();
 
-
 }
 
