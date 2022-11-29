@@ -7,6 +7,10 @@
 #include <unordered_map>
 #include "Locations.hpp"
 #include "OpeningScene.hpp"
+#include "Motel.hpp"
+#include "CountryClub.hpp"
+#include "Mansons.hpp"
+#include "PearlsTaxidermy.hpp"
 
 
 
@@ -15,14 +19,17 @@ using namespace std;
 class Story
 {
 public:
-    string displayMenu(); //display locations
+    int displayMenu(); //display locations
     void buildStory(Detective *d); //call in main manage everything
     void guessKiller(); 
-    void createWorld();
+    // void createWorld(Detective *d);
+    
 
 
 private:
-    unordered_map<string , Location*> storeLocation;
+    unordered_map<string , void(Location::*)()> storeLocation;
+
+
     bool clueFound;
     bool gameOver;
 
