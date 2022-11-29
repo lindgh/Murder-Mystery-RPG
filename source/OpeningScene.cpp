@@ -22,7 +22,7 @@ void OpeningScene::playScene(Detective *aDetective) {
 
     cout << "That's weird. Your car is making noises it probably" <<
     " shouldn't be making. Maybe we can ignore it? \n" <<
-    "[Enter '1' to ignore]\n[Enter '2' to pull over]" << endl;
+    "[Enter '1' to ignore]\n[Enter '2' to pull over]\n\nEnter your choice: ";
 
     int choice;
     validateInput(choice, 2, 1);
@@ -59,7 +59,7 @@ void OpeningScene::playScene(Detective *aDetective) {
 
     cout << "\"Hey there, sugar, my name’s Abby,\" she smiles warmly." <<
     " \"What can I get you?\"\n[Enter '1' for a black coffee]\n[Enter '2'" <<
-    " for a hot chocolate]" << endl;
+    " for a hot chocolate]\n\nEnter your choice: ";
 
     string userDrink;
     validateInput(choice, 2, 1);
@@ -75,7 +75,7 @@ void OpeningScene::playScene(Detective *aDetective) {
     cout << "\nShe writes your order down and starts working on it" <<
     " immediately. \n\n\"What brings you to a town like this in the" <<
     " pouring rain?\" she asks.\n[Enter '1' to tell her the truth]\n[Enter" <<
-    " '2' to use flattery]" << endl;
+    " '2' to use flattery]\n\nEnter your choice: ";
 
     validateInput(choice, 2, 1);
     clearStream();
@@ -89,7 +89,7 @@ void OpeningScene::playScene(Detective *aDetective) {
     else {
         cout << "\n\"A gorgeous face like yours,\" you reply.\n\n\"Oh" <<
         " don't be ridiculous,\" she giggles. \"I am very flattered," <<
-        " darling, but you're about as old as my son.\"" << endl;
+        " darling, but you're about as young as my son.\"" << endl;
         continuePrompt(); 
     }
 
@@ -139,7 +139,7 @@ void OpeningScene::playScene(Detective *aDetective) {
     " the day's exhaustion hitting you at once, you feel thankful for that. You get" <<
     " into your car and glance in the direction of the diner.\n\nDoes your journey" <<
     " end here?\n[Enter '1' to stay and solve the murder]\n[Enter '2' to get out of" <<
-    " this town]" << endl;
+    " this town]\n\nEnter your choice: ";
 
     validateInput(choice, 2, 1);
     clearStream();
@@ -151,6 +151,7 @@ void OpeningScene::playScene(Detective *aDetective) {
         
         cout << "[*You have gained 10 points*]\n[*New location unlocked: Motel*]\n" << endl;
         aDetective->setPoints(10);
+        continuePrompt();
 
         cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
 
@@ -165,5 +166,5 @@ void OpeningScene::playScene(Detective *aDetective) {
         "\n\n[GAME OVER]\n" << endl;
     }
 
-    cout << "exiting opening scene...\n" << endl;
+    continuePrompt();
 }

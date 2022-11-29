@@ -5,18 +5,13 @@
 #include "header/Detective.hpp"
 #include "header/Motel.hpp"
 #include "header/PearlsTaxidermy.hpp"
+#include "header/Hollands.hpp"
+#include "header/OpeningScene.hpp"
 
 using namespace std;
 
 int main() {
 
-    Detective *d;
-    // Motel m;
-    // m.playScene(d);
-    PearlsTaxidermy pt;
-    pt.playScene(d);
-
-    // delete d;
 
     return 0;
 

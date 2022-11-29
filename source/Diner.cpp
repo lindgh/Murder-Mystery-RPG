@@ -7,11 +7,12 @@ void Diner::talkToGentleman(Detective *aDetective) {
     " over his shoulder, you realize the article he's reading is about the" <<
     " Hollands' murder. You're intrigued, and decide to ask him a question." <<
     "\n\nWhat would you like to ask him?\n[Enter '1' to ask if he knew the" <<
-    " Hollands]\n[Enter '2' to ask what he thinks about the murder]" << endl;
+    " Hollands]\n[Enter '2' to ask what he thinks about the murder]\n\nEnter your choice: ";
 
     int choice;
     validateInput(choice, 2, 1);
     clearStream();
+
 
     if (choice == 1) {
         cout << "\n\"Hello,\" you greet him. \"Did you know the Hollands" <<
@@ -38,6 +39,7 @@ void Diner::talkToGentleman(Detective *aDetective) {
     " just a few blocks down from here.\n\nYou thank the old man and let him go" <<
     " back to his reading." << endl;
     continuePrompt();
+    
 
     cout << "[*You have gained 10 points*]" << endl;
     aDetective->setPoints(10);
@@ -65,7 +67,8 @@ void Diner::dinerPrompt(Detective *aDetective) {
     int choice;
     cout << "What would you like to do?\n[Enter '1' to eavesdrop on Abby" <<
     " and the stranger's argument]\n[Enter '2' to talk with the gentleman" <<
-    " near you reading the article]\n[Enter '3' to mind your own business]" << endl;
+    " near you reading the article]\n[Enter '3' to mind your own business]\n" << 
+    "\nEnter your choice: ";
     validateInput(choice, 3, 1);
     clearStream();
 
@@ -92,7 +95,7 @@ void Diner::playScene(Detective *aDetective) {
 
     cout << "You glance at the menu. What are you going to order?\n[Enter" <<
     " '1' for pancakes]\n[Enter '2' for a cinnamon roll]\n[Enter '3' for a" <<
-    " black coffee]" << endl;
+    " black coffee]\n\nEnter your choice: ";
 
     int choice;
     validateInput(choice, 3, 1);
@@ -125,7 +128,7 @@ void Diner::playScene(Detective *aDetective) {
     choice = 1;
     while (choice == 1) {
         cout << "Would you like to do something else?\n[Enter '1' for yes]\n" <<
-        "[Enter '2' to leave]" << endl;
+        "[Enter '2' to leave]\n\nEnter your choice: ";
         validateInput(choice, 2, 1);
         clearStream();
 

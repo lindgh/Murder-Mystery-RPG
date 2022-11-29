@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class PearlsTaxidermy: public Location {
+class Hollands: public Location {
 public:
 
     virtual void playScene(Detective *d); // needes to be implemented for each sub class
