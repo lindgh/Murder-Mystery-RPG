@@ -32,3 +32,16 @@ void Location::validateInput(int& input, int max, int min){
                         // within bounds of menu options.
         input = num; //at this point, num would be valid.
 }
+
+void Location::continuePrompt() {
+    cout << "[Enter anything to continue]\n";
+    cin.clear();
+    cin.ignore(50, '\n');
+    cout << "\n-----\n\n";
+}
+
+void Location::clearStream() {
+    cin.clear();
+    cin.ignore();
+    cout << "\n-----\n";
+}

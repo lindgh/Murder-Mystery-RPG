@@ -9,3 +9,6 @@ googletest-src/
 lib/libgtest.a
 lib/libgtest_main.a
 .vscode/
+googletest-build/
+googletest-download/
+googletest-src/

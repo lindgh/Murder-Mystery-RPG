@@ -2,21 +2,9 @@
 #include "../header/Detective.hpp"
 #include <limits.h>
 
-void OpeningScene::continuePrompt() {
-    cout << "[Enter anything to continue]\n";
-    cin.clear();
-    cin.ignore(50, '\n');
-    cout << "\n-----\n\n";
-}
-
-void OpeningScene::clearStream() {
-    cin.clear();
-    cin.ignore();
-    cout << "\n-----\n";
-}
 
 void OpeningScene::playScene(Detective *aDetective) {
-    string cont;
+    //string cont;
     cout << "\nWelcome to Murder Mystery: A Text-Based RPG" << endl;
     cout << "[Your points currently: " << aDetective->getPoints() << 
     "]\n"<< endl;
