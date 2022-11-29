@@ -17,16 +17,9 @@ public:
     //outer functions that if left, go back to playScene function
     void investigateCounter();
     void investigateWallOfPictures();
-
-    //-----functions to explore INSIDE exploreRoom only----
-    void exploreBathroom();
-    void exploreDrawers();
-    void exploreNightStand();
-    void exitRoom203AfterExplore();
-    //-----------------------------------------------------
-
-    //void validateInput(int& input, int max, int min);
-
+    void investigateEmployee();
+    void LeaveStore();
+    void gameOver();
 
 private:
 

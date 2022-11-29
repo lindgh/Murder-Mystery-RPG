@@ -47,7 +47,6 @@ void Motel::goToMyRoom(){
     cout << "Press any key to continue";
     cin.ignore();
 
-    //here, if we are still doing count for number of days, will display ---------------------------------------
 
 }
 

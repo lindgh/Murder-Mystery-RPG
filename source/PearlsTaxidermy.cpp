@@ -5,7 +5,6 @@
 using namespace std;
 
 
-
 void PearlsTaxidermy::playScene(){ 
     int choice;
 
@@ -97,67 +96,121 @@ void PearlsTaxidermy::investigateWallOfPictures(){
 
 
 //once here, after exploring, "force player to go to their room."
-void Motel::exploreRoom(){
+void PearlsTaxidermy::investigateEmployee(){
 
     int choice;
     //clear terminal
     system("clear");
-    cout << "You walk into room 203. The room is empty thankfully. Whoever was here however, "
-    "left the room in disarray.\n";
+    cout << "As you approach the lady shelving some items, you see that it is Pearl, Arthur's girlfriend. You don't really know her, except for "
+         << "the few times you have seen her around the Leaky Diner or at the Country Club visitng Arthur. With hesitation, you make "
+         << "your way over to her\n\n";
+    cout << "You and Pearl make small talk.\n\n";
+
     
     //initial menu, will change in switch statement 
-    cout << "What would you like to do in this room?\n";
-    cout << "Enter '1' to explore the bathroom\n";
-    cout << "Enter '2' to investigate the table with drawers\n";
-    cout << "Enter '3' to investigate the nightstand next to the bed";
+    cout << "What would you like to do?\n";
+    cout << "Enter '1' to ask if Pearl suspects anyone is the killer\n";
+    cout << "Enter '2' to ask Pearl who she thinks could be the next victim \n";
+    cout << "Enter '3' to leave Pearl to her work\n";
     cout << "\nEnter your choice: ";
 
     Location::validateInput(choice, 3,1); //validate input first
 
 
-    while(choice != 4){ 
+    while(choice != 3){ 
      switch (choice){
-            case 1: exploreBathroom(); //
+            case 1: 
+            system("clear");
+            cout << "\n\nYou finally ask Pearl who she suspects the killer to be.\n";
+            cout << "Pearl stops shelving and looks thoughtfully for a second. \"Hmm, thats a pretty "
+                 << "loaded question to ask someone... maybe its you!\" Pearl laughs. Then she says "
+                 << "I know you were interested in the case [userName], but I would be careful if I were you "
+                 << "since the whole town is on edge, everyone is suspecting everyone\".";
+            cout << "\n\nIt seems Pearl does not take this question seriously, so you laugh along with her.\n\n";
+
+            cout << "Press any key to continue";
+            cin.ignore();
             break;
-            case 2: exploreDrawers(); //
-            break;
-            case 3: exploreNightStand();
+            case 2:  
+            system("clear");
+            cout << "\n\nYou finally ask Pearl who she guesses the next victem might be.\n";
+            cout << "\nPearl tells you \"Woah man, are you sick? I've grown up here with this folks my whole life"
+                 << " and you want guess which one of them will die next?\" Pearl has stopped shelving, and she looks angry. "
+                 << "She continues, \"You may be out of town and find this murder investigation interesting or something, but this is real life for us folks here!\"";
+            cout << "\n\nYou are taken aback by Pearl's outburst, but can understand why. You sheepishly apologize to her.\n\n";
+
+            cout << "Press any key to continue";
+            cin.ignore();
             break;
         }
 
         //display menu
-        cout << "\nWhat would you like to do now?\n";
-        cout << "Enter '1' to explore the bathroom\n";
-        cout << "Enter '2' to investigate the table with drawers\n";
-        cout << "Enter '3' to investigate the nightstand next to the bed\n";
-        cout << "Enter '4' to leave room now\n";
+        cout << "What would you like to do?\n";
+        cout << "Enter '1' to ask if Pearl suspects anyone is the killer\n";
+        cout << "Enter '2' to ask Pearl who she thinks could be the next victim \n";
+        cout << "Enter '3' to leave Pearl to her work\n";
         cout << "\nEnter your choice: ";
-        validateInput(choice, 4,1); //validate input first
+        validateInput(choice, 3,1); //validate input first
     } //end while loop
 
-    //if exiting room after exploring
-    if(choice == 4){
-        exitRoom203AfterExplore();
-    }
-
+    cout << "\n You end the converstation with Pearl and head away...\n\n";
+    cout << "Press any key to continue";
+    cin.ignore();
 
 }
 
 
 //clues found in bathroom -> trashcan: receipt and pack of cinammon gums.
-void Motel::exploreBathroom(){
+void PearlsTaxidermy::LeaveStore(){
+    int choice;
     system("clear"); 
 
-    cout << "You enter the bathroom. It looks fairly plain, with nothing too outside of the " 
-         << "ordinary for used motel bathroom. \n\nThe faucet is dripping. Quite questionable behavior "
-         << "on the part of the room owner, but than again, you are snooping arround uninveited. "
-         << "Maybe the trash can holds some secrets.\n\n";
+    cout << "As you head to the door, you hear someone shout after you. You turn around to see that it is Pearl.\n\n";
 
-    cout << "Huh, that's odd. It only has two things in it: an empty packet of cinnamon gum and a receipt "
-         << "from the Leaky Diner. Very curious.\n\n";
+    cout << "She asks you, \"Hey! Before you go, I am holding a sale on some of my stuffed animals. I have a few in the back, "
+         << "would you like to see them and possibly buy one?\"\n\n";
 
-    cout << "You inspect the receipt further. \"One blueberry muffin, 2 raw eggs in a cup.\" An aquired "
-         << "taste for sure...\n\n";
+    cout << "Would you like to do?\n";
+    cout << "Enter '1' to decline and leave Pearl's Taxidermy\n";
+    cout << "Enter '2' to follow Pearl to the back of the store";
+    cout << "\nEnter your choice: ";
+
+    //validate input
+    Location::validateInput(choice,2,1);
+
+    switch(choice){
+        case 1:
+        system("clear");
+        cout << "You kindly decline Pearl's offer and continue heading out the store. For now... "
+             << "you don't really need a creepy stuffed animal.\n\n";
+
+        cout <<"Press any key to continue";
+        cin.ignore();
+        break;
+        case 2: gameOver();
+        //SEND GAME OVER FLAG
+
+        break;
+    }
+
+
+}
+
+void PearlsTaxidermy::gameOver(){
+    system("clear");
+
+    cout << "You follow Pearl to the back of the store for some stuffed animals.\n\n";
+    cout << "You start to say, \"So Pearl... Can I ask you some questions?\"";
+    cout << "\n\n\"Sure, let me just grab something real quick. I'll be right back\" Pearl "
+         << "tells you while walking away.\n\n";
+
+    cout << "You turn back to the stuffed animals to look at them. You see a big deer head mounted and "
+         << "approach it. You feel scared suddenly as you watch your reflection in its dead gaze.\n\n";
+
+    cout << "Suddenly, you feel a small hand on your shoulder. You turn arround... and see Pearl standing in front "
+         << "of you. Suddenly the world fades to black...\n\n\n\n";
+
+    cout << "GAME OVER\n\n\n";
 
     cout <<"Press any key to continue";
     cin.ignore();
@@ -165,31 +218,3 @@ void Motel::exploreBathroom(){
 
 }
 
-void Motel::exploreDrawers(){
-    system("clear");
-
-    cout << "As you make your way to the drawers, you glance around the room. " 
-         <<"It looks as if it was untouched, save for the drawers left flung open.\n\n";
-
-    cout << "All the drawers are empty, except for two. You inspect them further. In one, "
-         <<"you find a week-old article about Mr. Holland's recent business ventures. In the other, "
-         << "you find a jump rope. Interesting.\n\n";
-
-        
-    cout <<"Press any key to continue";
-    cin.ignore();
-    
-
-}
-
-void Motel::exploreNightStand(){
-    system("clear");
-
-    cout << "You look around the room and see some items on the night stand next to the bed. ";
-    cout << "You see a packet of cigarettes... and a half eaten cinnamon bun, with ants "
-         << "crawling all over the sugary bread. Yuck!\n\n";
-
-    cout <<"Press any key to continue";
-    cin.ignore();    
-
-}
