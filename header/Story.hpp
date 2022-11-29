@@ -15,15 +15,16 @@ using namespace std;
 class Story
 {
 public:
-    // void displayMenu(); //display locations
-    // void buildStory(Detective *d); //call in main manage everything
-    // void guessKiller(); 
+    string displayMenu(); //display locations
+    void buildStory(Detective *d); //call in main manage everything
+    void guessKiller(); 
+    void createWorld();
 
 
 private:
-    // unordered_map<string , Location*> storeLocation;
-    // bool clueFound;
-    // bool gameOver;
+    unordered_map<string , Location*> storeLocation;
+    bool clueFound;
+    bool gameOver;
 
 
 };
