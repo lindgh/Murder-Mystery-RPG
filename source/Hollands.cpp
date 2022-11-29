@@ -42,7 +42,7 @@ void Hollands::playScene(Detective *d){
         }
 
         cout << "\n\nWould you like to do now?\n";
-        cout << "[Enter '0' to Leave the scene]\n";
+        cout << "[Enter '0' to Leave the Hollands]\n";
         cout << "[Enter '1' to Approach the reporter]\n";
         cout << "[Enter '2' to Approach the officer]\n";
         cout << "[Enter '3' to Approach the bystander]\n";
@@ -192,7 +192,7 @@ void Hollands::investigateBystander(){
 }
 
 //clues found in bathroom -> trashcan: receipt and pack of cinammon gums.
-void Hollands::LeaveStore(){
+void Hollands::LeaveHollands(){
 
     
 
