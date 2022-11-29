@@ -1,59 +1,11 @@
 #include "../header/Locations.hpp"
 
-// Location::Location(string name, string clue)
-// {
-
-// }
-
-// void Location::displayName()
-// {
-//     // display the name
-//     cout << "Location: " << name << endl;
-// }
-
-// void Location::setClueFound(bool val)
-// {
-//     clueFound = val;
-// }
-
-// bool Location::isClueFound()
-// {
-//     // return whether the clue is found
-//     return clueFound;
-// }
-
-// bool Location::insertClue(string clue)
-// {
-//     // insert a clue into the clues vector
-//     clues.push_back(clue);
-// }
-
-// void Location::displayClue()
-// {
-//     // display the clue
-
-// }
-
-// bool Location::isClueFound()
-// {
-//     // return whether the clue is found
-//     return clueFound;
-// }
-
-// bool Location::insertClue(string clue)
-// {
-//     // insert a clue into the clues vector
-//     // cluse.push_back(clue);
-// }
-//Will move to another class, but here for now for testing purposes
-//helper function to validate integer input
 void Location::validateInput(int& input, int max, int min){
-
     bool invalid;
     int num;
      do
         {
-            cin >> num;
+            cin >> num; 
             //checks to make sure a char value was not entered.
 			while (cin.fail()) //returns true if input failure occurs
 			{
@@ -79,4 +31,17 @@ void Location::validateInput(int& input, int max, int min){
         }while(invalid); //Will validate that userInput is not a char, and 
                         // within bounds of menu options.
         input = num; //at this point, num would be valid.
+}
+
+void Location::continuePrompt() {
+    cout << "[Enter anything to continue]\n";
+    cin.clear();
+    cin.ignore(50, '\n');
+    cout << "\n-----\n\n";
+}
+
+void Location::clearStream() {
+    cin.clear();
+    cin.ignore();
+    cout << "\n-----\n";
 }

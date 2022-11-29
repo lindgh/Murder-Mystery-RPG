@@ -3,15 +3,18 @@
 
 #include <string>
 #include <iostream>
-#include <vector>
-#include "../header/Locations.hpp"
+#include "Locations.hpp"
+#include "Detective.hpp"
 
 using namespace std;
 
-class OpeningScene : public Location
+class OpeningScene: public Location
 {
   public:
-    void playScene();
+    virtual void playScene(Detective *aDetective);
+
+  private:
+    string name = "Opening Scene";
 };
 
-#endif 
+#endif //OPENINGSCENE_HPP
