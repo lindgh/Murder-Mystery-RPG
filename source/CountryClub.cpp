@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-void CountryClub::playScene()
+void CountryClub::playScene(Detective *aDetective)
 {
     ifstream scenceContainer;
     string line;
@@ -70,7 +70,10 @@ void CountryClub::setDecisions()
             choice->displayResults();
 
             cout << "\nEnter your choice: ";
-            cin >> option;
+
+            validateInput(option, choie->getResultsSize() - 1, 0);
+
+            clearStream();
 
             choice = choice->getResult(option);
         }

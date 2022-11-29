@@ -4,13 +4,14 @@
 #include <iostream>
 #include "Choice.hpp"
 #include "Locations.hpp"
+#include "Detective.hpp"
 
 using namespace std;
 
 class CountryClub : public Location
 {
 public:
-    virtual void playScene();
+    void playScene(Detective *aDetective);
 
 private:
     void setDecisions();
