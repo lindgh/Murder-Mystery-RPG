@@ -22,4 +22,4 @@ private:
     string name;
 };
 
-#endif // RECTANGLE_HPP
+#endif // LOCATION_HPP

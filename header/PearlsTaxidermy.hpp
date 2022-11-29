@@ -11,7 +11,7 @@ using namespace std;
 class PearlsTaxidermy: public Location {
 public:
 
-    virtual void playScene(); // needes to be implemented for each sub class
+    virtual void playScene(Detective *d); // needes to be implemented for each sub class
 
 
     //outer functions that if left, go back to playScene function

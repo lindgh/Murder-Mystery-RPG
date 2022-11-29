@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void PearlsTaxidermy::playScene(){ 
+void PearlsTaxidermy::playScene(Detective *d){ 
     int choice;
 
     cout << "You make your way into Pearl's Taxidermy shop. The air feels stale, and you feel as "
@@ -14,14 +14,15 @@ void PearlsTaxidermy::playScene(){
          << " the vitcims are connected one way or another to this place...\n\n";
 
     cout << "Would you like to do?\n";
-    cout << "Enter '1' to Approach the counter\n";
-    cout << "Enter '2' to Go to the wall full of pictures\n";
-    cout << "Enter '3' to Talk to the lady shelving some items\n";
-    cout << "Enter '4' to Leave Pearl's Taxidermy\n";
+    cout << "[Enter '1' to Approach the counter]\n";
+    cout << "[Enter '2' to Go to the wall full of pictures]\n";
+    cout << "[Enter '3' to Talk to the lady shelving some items]\n";
+    cout << "[Enter '4' to Leave Pearl's Taxidermy]\n";
     cout << "\nEnter your choice: ";
 
-    //validate input
-    Location::validateInput(choice,4,1);
+     //validate input
+     Location::validateInput(choice,4,1);
+     clearStream();
 
     while( choice != 4){
         switch (choice){
@@ -34,12 +35,13 @@ void PearlsTaxidermy::playScene(){
         }
 
         cout << "\n\nWould you like to do now?\n";
-        cout << "Enter '1' to Approach the counter\n";
-        cout << "Enter '2' to Go to the wall full of pictures\n";
-        cout << "Enter '3' to Talk to the lady shelving some items\n";
-        cout << "Enter '4' to Leave Pearl's Taxidermy\n";
+        cout << "[Enter '1' to Approach the counter]\n";
+        cout << "[Enter '2' to Go to the wall full of pictures]\n";
+        cout << "[Enter '3' to Talk to the lady shelving some items]\n";
+        cout << "[Enter '4' to Leave Pearl's Taxidermy]\n";
         cout << "\nEnter your choice: ";
         Location::validateInput(choice,4,1);
+        clearStream();
 
     }//end while
 
@@ -48,9 +50,8 @@ void PearlsTaxidermy::playScene(){
     }
 
     //testing purpose
-    cout <<"\n\n exiting Pearl's Taxidermy location...";
-    cout <<"\nPress any key to continue";
-    cin.ignore();
+    cout <<"\n\n exiting Pearl's Taxidermy location...\n\n";
+    continuePrompt();
 
 }
 
@@ -58,8 +59,8 @@ void PearlsTaxidermy::playScene(){
 
 void PearlsTaxidermy::investigateCounter(){
     //clear terminal 
-    system("clear");
-    cout << "You go to the counter, and see the log book of all the customers open. Guess Pearl's "
+
+    cout << "\nYou go to the counter, and see the log book of all the customers open. Guess Pearl's "
          << "Taxidermy has had a slow year, since you can see all of the purchases made for the whole year on "
          << "one page so far.\n\n";
 
@@ -67,8 +68,7 @@ void PearlsTaxidermy::investigateCounter(){
          << "they have a black cross next to their names. Hmmm, strange...\n\n";
 
             //flag here to stop
-    cout << "Press any key to continue";
-    cin.ignore();
+    continuePrompt();
 
 }
 
@@ -76,8 +76,8 @@ void PearlsTaxidermy::investigateCounter(){
 
 void PearlsTaxidermy::investigateWallOfPictures(){
     //clear terminal 
-    system("clear");
-    cout << "On the right side of the store, you see a wall of pictures decorating the place. Upon "
+
+    cout << "\nOn the right side of the store, you see a wall of pictures decorating the place. Upon "
          << "further investigation, you see pictures of the town folks, some of them funny, and others "
          << "of clients with their purchases from here.\n\n";
 
@@ -89,8 +89,7 @@ void PearlsTaxidermy::investigateWallOfPictures(){
          << "was yelling at Robert about something.\n\n";
 
             //flag here to stop
-    cout << "Press any key to continue";
-    cin.ignore();
+    continuePrompt();
 
 }
 
@@ -100,8 +99,8 @@ void PearlsTaxidermy::investigateEmployee(){
 
     int choice;
     //clear terminal
-    system("clear");
-    cout << "As you approach the lady shelving some items, you see that it is Pearl, Arthur's girlfriend. You don't really know her, except for "
+
+    cout << "\nAs you approach the lady shelving some items, you see that it is Pearl, Arthur's girlfriend. You don't really know her, except for "
          << "the few times you have seen her around the Leaky Diner or at the Country Club visitng Arthur. With hesitation, you make "
          << "your way over to her\n\n";
     cout << "You and Pearl make small talk.\n\n";
@@ -120,7 +119,7 @@ void PearlsTaxidermy::investigateEmployee(){
     while(choice != 3){ 
      switch (choice){
             case 1: 
-            system("clear");
+            clearStream();
             cout << "\n\nYou finally ask Pearl who she suspects the killer to be.\n";
             cout << "Pearl stops shelving and looks thoughtfully for a second. \"Hmm, thats a pretty "
                  << "loaded question to ask someone... maybe its you!\" Pearl laughs. Then she says "
@@ -128,19 +127,17 @@ void PearlsTaxidermy::investigateEmployee(){
                  << "since the whole town is on edge, everyone is suspecting everyone\".";
             cout << "\n\nIt seems Pearl does not take this question seriously, so you laugh along with her.\n\n";
 
-            cout << "Press any key to continue";
-            cin.ignore();
+            continuePrompt();
             break;
             case 2:  
-            system("clear");
+            clearStream();
             cout << "\n\nYou finally ask Pearl who she guesses the next victem might be.\n";
             cout << "\nPearl tells you \"Woah man, are you sick? I've grown up here with this folks my whole life"
                  << " and you want guess which one of them will die next?\" Pearl has stopped shelving, and she looks angry. "
                  << "She continues, \"You may be out of town and find this murder investigation interesting or something, but this is real life for us folks here!\"";
             cout << "\n\nYou are taken aback by Pearl's outburst, but can understand why. You sheepishly apologize to her.\n\n";
 
-            cout << "Press any key to continue";
-            cin.ignore();
+            continuePrompt();
             break;
         }
 
@@ -153,9 +150,10 @@ void PearlsTaxidermy::investigateEmployee(){
         validateInput(choice, 3,1); //validate input first
     } //end while loop
 
+     clearStream();
     cout << "\n You end the converstation with Pearl and head away...\n\n";
-    cout << "Press any key to continue";
-    cin.ignore();
+    continuePrompt();
+
 
 }
 
@@ -163,9 +161,9 @@ void PearlsTaxidermy::investigateEmployee(){
 //clues found in bathroom -> trashcan: receipt and pack of cinammon gums.
 void PearlsTaxidermy::LeaveStore(){
     int choice;
-    system("clear"); 
+    
 
-    cout << "As you head to the door, you hear someone shout after you. You turn around to see that it is Pearl.\n\n";
+    cout << "\nAs you head to the door, you hear someone shout after you. You turn around to see that it is Pearl.\n\n";
 
     cout << "She asks you, \"Hey! Before you go, I am holding a sale on some of my stuffed animals. I have a few in the back, "
          << "would you like to see them and possibly buy one?\"\n\n";
@@ -180,12 +178,11 @@ void PearlsTaxidermy::LeaveStore(){
 
     switch(choice){
         case 1:
-        system("clear");
+        clearStream();
         cout << "You kindly decline Pearl's offer and continue heading out the store. For now... "
              << "you don't really need a creepy stuffed animal.\n\n";
 
-        cout <<"Press any key to continue";
-        cin.ignore();
+        continuePrompt();
         break;
         case 2: gameOver();
         //SEND GAME OVER FLAG
@@ -197,9 +194,9 @@ void PearlsTaxidermy::LeaveStore(){
 }
 
 void PearlsTaxidermy::gameOver(){
-    system("clear");
+    
 
-    cout << "You follow Pearl to the back of the store for some stuffed animals.\n\n";
+    cout << "\nYou follow Pearl to the back of the store for some stuffed animals.\n\n";
     cout << "You start to say, \"So Pearl... Can I ask you some questions?\"";
     cout << "\n\n\"Sure, let me just grab something real quick. I'll be right back\" Pearl "
          << "tells you while walking away.\n\n";
@@ -212,8 +209,7 @@ void PearlsTaxidermy::gameOver(){
 
     cout << "GAME OVER\n\n\n";
 
-    cout <<"Press any key to continue";
-    cin.ignore();
+    continuePrompt();
 
 }
 
