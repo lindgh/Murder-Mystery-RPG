@@ -13,13 +13,13 @@ class Location
 {
 public:
     virtual void playScene(Detective *aDetective) = 0; // needes to be implemented for each sub class
-    void validateInput(int& input, int max, int min);
+    void validateInput(int &input, int max, int min);
     void continuePrompt();
     void clearStream();
 
 private:
-    string userInput;            // used for menu options
+    string userInput; // used for menu options
     string name;
 };
 
-#endif // LOCATION_HPP
+#endif // LOCATIONS_HPP
