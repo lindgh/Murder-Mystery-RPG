@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-void Mansons::playScene()
+void Mansons::playScene(Detective *aDetective)
 {
     ifstream scenceContainer;
     string line;
@@ -72,7 +72,10 @@ void Mansons::setDecisions()
             choice->displayResults();
 
             cout << "\nEnter your choice: ";
-            cin >> option;
+
+            validateInput(option, choice->getResultsSize() - 1, 0);
+
+            clearStream();
 
             choice = choice->getResult(option);
         }

@@ -38,6 +38,11 @@ void Choice::displayOutput()
     cout << output << endl;
 }
 
+int Choice::getResultsSize()
+{
+    return results.size();
+}
+
 void Choice::displayResults()
 {
     int option = 0;
