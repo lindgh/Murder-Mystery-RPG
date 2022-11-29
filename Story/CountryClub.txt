@@ -1,0 +1,3 @@
+You arrive at the Lyle Country Club. It doesn’t look all that busy today. Would you like to approach someone?
+
+decision

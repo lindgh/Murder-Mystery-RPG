@@ -40,7 +40,7 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
     include_directories("${gtest_SOURCE_DIR}/include")
 endif ()
 
-set(SOURCE_FILES source/Locations.cpp source/OpeningScene.cpp source/Detective.cpp source/Diner.cpp)
+set(SOURCE_FILES source/Locations.cpp source/OpeningScene.cpp source/Motel.cpp source/PearlsTaxidermy.cpp source/Diner.cpp source/Detective.cpp source/Choice source/Mansons.cpp source/CountryClub.cpp)
 add_executable(main main.cpp ${SOURCE_FILES})
 
 set(TEST_FILES tests/testingOpenScene.cpp tests/testingDetective.cpp tests/testingDiner.cpp)

@@ -12,3 +12,4 @@ lib/libgtest_main.a
 googletest-build/
 googletest-download/
 googletest-src/
+main.cpp
