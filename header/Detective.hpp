@@ -11,11 +11,15 @@ using namespace std;
 class Detective {
   private:
     int userPoints;
+    int gameStatus = 0;
 
   public:
     Detective();
     void setPoints(int);
     int getPoints();
+
+    void setGameOverFlag();
+    int getGameOverFlag();
 
 };
 

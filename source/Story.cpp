@@ -27,15 +27,9 @@ void Story::buildStory(Detective *d){
     //Start with Opening Scene [always]
     OpeningScene os;
     os.playScene(d);
+    gameOverFlag = d->getGameOverFlag();
 
-
-    // bool status = 
-    //if !gameOver, player has decided to investigated.
-    //populate map of locations.
-    // displayMenu(d, max);
-    // validateInput(nextLocation,max,1);
-
-    while (!gameOverFlag){
+    while (gameOverFlag != -999){
 
         displayMenu(d, max);
         validateInput(nextLocation,max,1);
@@ -56,6 +50,7 @@ void Story::buildStory(Detective *d){
 
         // displayMenu(d, max);
         // validateInput(nextLocation,max,1);
+        gameOverFlag = d->getGameOverFlag();
 
     }//end while
 

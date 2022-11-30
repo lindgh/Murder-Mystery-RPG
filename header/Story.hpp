@@ -29,7 +29,7 @@ public:
 private:
 
     bool clueFound;
-    bool gameOverFlag;
+    int gameOverFlag = 0;
 
 };
 

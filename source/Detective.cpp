@@ -11,3 +11,12 @@ void Detective::setPoints(int addPoints) {
 int Detective::getPoints() {
     return userPoints;
 }
+
+
+void Detective::setGameOverFlag(){ //call to change status from false to true
+    gameStatus = -999;
+}
+
+int Detective::getGameOverFlag(){
+    return gameStatus;
+}

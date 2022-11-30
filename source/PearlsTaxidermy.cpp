@@ -52,7 +52,7 @@ void PearlsTaxidermy::playScene(Detective *d){
     }//end while
 
     if(choice == 4){
-        LeaveStore();
+        LeaveStore(d);
     }
 
     //testing purpose
@@ -165,7 +165,7 @@ void PearlsTaxidermy::investigateEmployee(){
 
 
 //clues found in bathroom -> trashcan: receipt and pack of cinammon gums.
-void PearlsTaxidermy::LeaveStore(){
+void PearlsTaxidermy::LeaveStore(Detective *d){
     int choice;
     
 
@@ -190,7 +190,7 @@ void PearlsTaxidermy::LeaveStore(){
 
         continuePrompt();
         break;
-        case 2: gameOver();
+        case 2: gameOver(d);
         //SEND GAME OVER FLAG
 
         break;
@@ -199,7 +199,7 @@ void PearlsTaxidermy::LeaveStore(){
 
 }
 
-void PearlsTaxidermy::gameOver(){
+void PearlsTaxidermy::gameOver(Detective *d){
     
 
     cout << "\nYou follow Pearl to the back of the store for some stuffed animals.\n\n";
@@ -214,6 +214,8 @@ void PearlsTaxidermy::gameOver(){
          << "of you. Suddenly the world fades to black...\n\n\n\n";
 
     cout << "GAME OVER\n\n\n";
+
+    d->setGameOverFlag();
 
 
 

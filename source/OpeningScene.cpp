@@ -167,6 +167,7 @@ void OpeningScene::playScene(Detective *aDetective) {
         "\n\n[GAME OVER]\n" << endl;
 
         // gameOverFlag = true;
+        aDetective->setGameOverFlag();
 
 
     }
