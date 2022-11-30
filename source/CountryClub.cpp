@@ -59,11 +59,12 @@ void CountryClub::setDecisions(Detective *aDetective)
 
     while (true)
     {
-        if (choice == &first || choice == &second)
+        if (aDetective->countryClubClue.getFlag() == false && (choice == &first || choice == &second))
         {
             cout << "[*You have gained 10 points*]" << endl;
             aDetective->setPoints(10);
             cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
+            aDetective->countryClubClue.setFlag(true);
         }
 
         if (choice->isOutput())

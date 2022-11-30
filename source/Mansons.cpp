@@ -61,11 +61,12 @@ void Mansons::setDecisions(Detective *aDetective)
 
     while (true)
     {
-        if (choice == &four)
+        if (aDetective->mansonsClue.getFlag() == false && choice == &four)
         {
             cout << "[*You have gained 10 points*]" << endl;
             aDetective->setPoints(10);
             cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
+            aDetective->mansonsClue.setFlag(true);
         }
 
         if (choice->isOutput())
