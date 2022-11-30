@@ -19,11 +19,6 @@ int main() {
     Story startGame;
     startGame.buildStory(d);
 
-    // Motel m;
-    // m.playScene(d);
-    // PearlsTaxidermy pt;
-    // pt.playScene(d);
-
     delete d;
 
     return 0;

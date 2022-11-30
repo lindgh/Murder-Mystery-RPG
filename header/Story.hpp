@@ -22,13 +22,10 @@ public:
     int displayMenu(); //display locations
     void buildStory(Detective *d); //call in main manage everything
     void guessKiller(); 
-    // void createWorld(Detective *d);
     
 
 
 private:
-    unordered_map<string , void(Location::*)()> storeLocation;
-
 
     bool clueFound;
     bool gameOver;

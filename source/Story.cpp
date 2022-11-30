@@ -3,6 +3,7 @@
 #include "../header/Locations.hpp"
 #include "../header/OpeningScene.hpp"
 #include "../header/Diner.hpp"
+#include "../header/Hollands.hpp"
 #include <iostream>
 using namespace std;
 
@@ -14,12 +15,12 @@ void Story::buildStory(Detective *d){
     int nextLocation;
 
     // Places to input:
-    Motel m;
+    Motel motel;
     Diner diner;
-    //Hollands crime scene
-    CountryClub cc; 
-    Mansons mcs; 
-    PearlsTaxidermy pt; 
+    Hollands hollandsCS;
+    CountryClub countryClub; 
+    Mansons mansonsCS; 
+    PearlsTaxidermy pearlsT; 
 
 
     //Start with Opening Scene [always]
@@ -35,19 +36,23 @@ void Story::buildStory(Detective *d){
     //populate map of locations.
     while (!gameOver){
         //print locations menu => displayMenu should return string of next location
-        nextLocation = displayMenu();
-        validate(nextLocation, 7, 1);
+        // nextLocation = displayMenu();
+ 
+        // Location::validateInput(nextLocation,2,1);
+
         
         switch (nextLocation){
-            case 1: m.playScene(d);
+            case 1: motel.playScene(d);
             break;
             case 2: diner.playScene(d);
             break;
-            case 3: cc.playScene(d);
+            case 3: countryClub.playScene(d);
             break;
-            case 4: mcs.playScene(d);
+            case 4: mansonsCS.playScene(d);
             break;
-            case 5: pt.playScene(d);
+            case 5: pearlsT.playScene(d);
+            break;
+            case 6: hollandsCS.playScene(d);
         }
 
     }

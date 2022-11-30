@@ -15,7 +15,7 @@ public:
     // void displayClue();            // display the clue we have
     // bool isClueFound();            // return if the clue found
     // bool insertClue(string);       // insert a clue into the cluse vector
-    virtual void playScene(Detective *d); // needes to be implemented for each sub class
+    void playScene(Detective *d); // needes to be implemented for each sub class
 
 
     //outer functions that if left, go back to playScene function
@@ -30,7 +30,7 @@ public:
     void exitRoom203AfterExplore();
     //-----------------------------------------------------
 
-    //void validateInput(int& input, int max, int min);
+
 
 
 private:
