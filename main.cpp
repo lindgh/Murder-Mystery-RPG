@@ -17,8 +17,11 @@ int main() {
     system("clear");
     Detective *d = new Detective(); //create player
 
+    //below was testing 
+    // cout << "country club clue: " << d->countryClubClue.getFlag() << endl;
+    // Story startGame;
+
     //being game
-    Story startGame;
     startGame.buildStory(d);
 
     
