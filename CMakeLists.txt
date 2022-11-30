@@ -43,7 +43,8 @@ endif ()
 set(SOURCE_FILES source/Locations.cpp source/OpeningScene.cpp 
                 source/Motel.cpp source/PearlsTaxidermy.cpp source/Diner.cpp 
                 source/Detective.cpp source/Choice.cpp source/Mansons.cpp 
-                source/CountryClub.cpp source/Hollands.cpp source/ClueFlag.cpp source/Story.cpp)
+                source/CountryClub.cpp source/Hollands.cpp source/ClueFlag.cpp
+                source/Story.cpp)
 add_executable(main main.cpp ${SOURCE_FILES})
 
 set(TEST_FILES tests/testingOpenScene.cpp tests/testingDetective.cpp 

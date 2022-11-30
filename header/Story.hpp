@@ -19,7 +19,7 @@ using namespace std;
 class Story
 {
 public:
-    int displayMenu(); //display locations
+    void displayMenu(Detective *d); //display locations
     void buildStory(Detective *d); //call in main manage everything
     void guessKiller(); 
     

@@ -17,7 +17,15 @@ int main() {
 
     //being game
     Story startGame;
-    startGame.buildStory(d);
+    startGame.displayMenu(d);
+
+    d->setPoints(50);
+    startGame.displayMenu(d);
+
+    d->setPoints(70);
+    startGame.displayMenu(d);
+
+    //startGame.buildStory(d);
 
     delete d;
 
