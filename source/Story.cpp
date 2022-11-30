@@ -185,3 +185,35 @@ void Story::validateInput(int &input, int max, int min)
     input = num;       // at this point, num would be valid.
 }
 
+void Story::guessKiller()
+{
+    vector<string> suspects;
+    string guess;
+
+    suspects.push_back("Arthur");
+    suspects.push_back("Waitress");
+    suspects.push_back("Pearl");
+    suspects.push_back("Robert");
+
+    cout << "   ----Guess the killer----    " << endl;
+    cout << "   ----   Suspects     ----    " << endl;
+
+    for (vector<string>::iterator iter  = suspects.begin(); iter != suspects.end(); ++iter) 
+    {
+        cout << "\t" << *iter << endl;
+    }
+
+    cout << endl << "Enter your choice: ";
+    cin >> guess;
+
+    if (guess == "Arthur") 
+    {
+        cout << "You guessed the killer correctly!!!" << endl;
+        return;
+    }
+
+    cout << "You guessed the killer incorrectly!!!" << endl;
+    cout << "You DIE! The killer gets you:(" << endl;
+    return;
+}
+
