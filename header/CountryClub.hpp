@@ -14,7 +14,7 @@ public:
     void playScene(Detective *aDetective);
 
 private:
-    void setDecisions();
+    void setDecisions(Detective *aDetective);
 };
 
 #endif // COUNTRY_CLUB_HPP

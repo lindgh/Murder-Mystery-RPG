@@ -26,12 +26,12 @@ void Mansons::playScene(Detective *aDetective)
         cout << "Error opening file.\n";
     }
 
-    setDecisions();
+    setDecisions(aDetective);
 
     scenceContainer.close();
 }
 
-void Mansons::setDecisions()
+void Mansons::setDecisions(Detective *aDetective)
 {
     // create the decision 'tree'
     Choice decisions;
@@ -61,6 +61,14 @@ void Mansons::setDecisions()
 
     while (true)
     {
+        if (aDetective->mansonsClue.getFlag() == false && choice == &four)
+        {
+            cout << "[*You have gained 10 points*]" << endl;
+            aDetective->setPoints(10);
+            cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
+            aDetective->mansonsClue.setFlag(true);
+        }
+
         if (choice->isOutput())
         {
             choice->displayOutput();

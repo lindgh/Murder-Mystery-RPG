@@ -49,9 +49,9 @@ void Choice::displayResults()
 
     for (map<string, Choice *>::iterator iter = results.begin(); iter != results.end(); iter++)
     {
-        cout << "Enter "
+        cout << "[Enter "
              << "'" << option << "'"
-             << " to " << iter->first << endl;
+             << " to " << iter->first << "]" << endl;
         option++;
     }
 }

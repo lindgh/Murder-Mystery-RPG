@@ -33,13 +33,13 @@ void CountryClub::playScene(Detective *aDetective)
 
     if (choice == 1)
     {
-        setDecisions();
+        setDecisions(aDetective);
     }
 
     scenceContainer.close();
 }
 
-void CountryClub::setDecisions()
+void CountryClub::setDecisions(Detective *aDetective)
 {
     // create the decision 'tree'
     Choice decisions;
@@ -59,6 +59,14 @@ void CountryClub::setDecisions()
 
     while (true)
     {
+        if (aDetective->countryClubClue.getFlag() == false && (choice == &first || choice == &second))
+        {
+            cout << "[*You have gained 10 points*]" << endl;
+            aDetective->setPoints(10);
+            cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
+            aDetective->countryClubClue.setFlag(true);
+        }
+
         if (choice->isOutput())
         {
             choice->displayOutput();
