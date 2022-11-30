@@ -5,6 +5,7 @@
 //#include "../header/Journal.hpp"
 #include <string>
 #include <iostream>
+#include "ClueFlag.hpp"
 
 using namespace std;
 
@@ -20,6 +21,15 @@ class Detective {
 
     void setGameOverFlag();
     int getGameOverFlag();
+
+    ClueFlag motelClue;
+    ClueFlag dinerClue;
+    ClueFlag hollandsClue;
+    ClueFlag countryClubClue;
+    ClueFlag mansonsClue;
+    ClueFlag pearlsTClue;
+
+
 
 };
 
