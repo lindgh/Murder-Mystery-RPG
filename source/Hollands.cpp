@@ -37,11 +37,11 @@ void Hollands::playScene(Detective *d){
 
     while( choice != 1){
         switch (choice){
-            case 2: investigateReporter();
+            case 2: investigateReporter(d);
             break;
             case 3: investigateOfficer();
             break;
-            case 4: investigateBystander();
+            case 4: investigateBystander(d);
             break;
         }
 
@@ -67,7 +67,7 @@ void Hollands::playScene(Detective *d){
 
 
 
-void Hollands::investigateReporter(){
+void Hollands::investigateReporter(Detective *d){
     //clear terminal 
     int choice;
 
@@ -103,9 +103,14 @@ void Hollands::investigateReporter(){
             cout << "\"Him, Why?\"\n\n"
                  << "\"He works at the town country club that rich folk like Holland waste their days at "
                  << "The man can't go two seconds without talking about how much he hates Holland,\" she replies.\n";
-         
-
-            continuePrompt();
+               continuePrompt();
+            if (d->hollandsClue.getFlag() == false) {
+               cout << "[*You have gained 10 points*]\n[*New location unlocked: Auburndale Country Club*]\n" << endl;
+               d->setPoints(10);
+               d->hollandsClue.setFlag(true);
+               cout << "[Your points currently: " << d->getPoints() << "]" << endl;
+               continuePrompt();
+               }
             break;
         }
 
@@ -140,7 +145,7 @@ void Hollands::investigateOfficer(){
 }
 
 
-void Hollands::investigateBystander(){
+void Hollands::investigateBystander(Detective *d){
     //clear terminal 
     int choice;
 
@@ -179,13 +184,21 @@ void Hollands::investigateBystander(){
             break;
         }
 
+        if (d->hollandsClue.getFlag() == false) {
+          cout << "[*You have gained 10 points*]\n[*New location unlocked: Auburndale Country Club*]\n" << endl;
+          d->setPoints(10);
+          d->hollandsClue.setFlag(true);
+          cout << "[Your points currently: " << d->getPoints() << "]" << endl;
+          continuePrompt();
+     }
+
         //display menu
-    cout << "What do you want to ask him?\n";
-    cout << "[Enter '1' to ask why he's angry]\n";
-    cout << "[Enter '2' to ask what he knows about the Hollands]\n";
-    cout << "[Enter '3' to leave him alone]\n";
-    cout << "\nEnter your choice: ";
-    Location::validateInput(choice, 3,1);
+          cout << "What do you want to ask him?\n";
+          cout << "[Enter '1' to ask why he's angry]\n";
+          cout << "[Enter '2' to ask what he knows about the Hollands]\n";
+          cout << "[Enter '3' to leave him alone]\n";
+          cout << "\nEnter your choice: ";
+          Location::validateInput(choice, 3,1);
     } //end while loop
 
      clearStream();

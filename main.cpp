@@ -19,7 +19,7 @@ int main() {
 
     //below was testing 
     // cout << "country club clue: " << d->countryClubClue.getFlag() << endl;
-    // Story startGame;
+    Story startGame;
 
     //being game
     startGame.buildStory(d);

@@ -15,9 +15,9 @@ public:
 
 
     //outer functions that if left, go back to playScene function
-    void investigateReporter();
+    void investigateReporter(Detective *d);
     void investigateOfficer();
-    void investigateBystander();
+    void investigateBystander(Detective *d);
     void LeaveHollands();
    
 

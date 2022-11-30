@@ -40,11 +40,13 @@ void Diner::talkToGentleman(Detective *aDetective) {
     " back to his reading." << endl;
     continuePrompt();
     
-
-    cout << "[*You have gained 10 points*]" << endl;
-    aDetective->setPoints(10);
-    cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
-    continuePrompt();
+    if (aDetective->dinerClue.getFlag() == false) {
+        cout << "[*You have gained 10 points*]\n[*New location unlocked: Hollands Crime Scene*]\n" << endl;
+        aDetective->setPoints(10);
+        aDetective->dinerClue.setFlag(true);
+        cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
+        continuePrompt();
+    }
 
 }
 
