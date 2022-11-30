@@ -11,21 +11,26 @@
 
 using namespace std;
 
+
 int main() {
 
+    system("clear");
     Detective *d = new Detective(); //create player
 
     //being game
     Story startGame;
-    startGame.displayMenu(d);
+    startGame.buildStory(d);
 
-    d->setPoints(50);
-    startGame.displayMenu(d);
+    
+    // startGame.displayMenu(d);
 
-    d->setPoints(70);
-    startGame.displayMenu(d);
+    // d->setPoints(50);
+    // startGame.displayMenu(d);
 
-    //startGame.buildStory(d);
+    // d->setPoints(70);
+    // startGame.displayMenu(d);
+
+    
 
     delete d;
 

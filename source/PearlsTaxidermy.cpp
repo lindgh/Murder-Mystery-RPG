@@ -1,4 +1,5 @@
 #include "../header/PearlsTaxidermy.hpp"
+#include "../header/Story.hpp"
 #include <iostream>
 #include <vector>
 #include <bits/stdc++.h>
@@ -12,6 +13,11 @@ void PearlsTaxidermy::playScene(Detective *d){
          << "though the beady dead eyes of the mounted animals along the walls are watching your "
          << "every move. While this place is unsettling, curiosity gets the best of you. After all, "
          << " the vitcims are connected one way or another to this place...\n\n";
+
+     cout << "[*You have gained 10 points*]\n[*You can guess the killer now!*]\n" << endl;
+        d->setPoints(10);
+        cout << "[Your points currently: " << d->getPoints() << "]" << endl;
+        continuePrompt();
 
     cout << "Would you like to do?\n";
     cout << "[Enter '1' to Approach the counter]\n";
@@ -208,6 +214,8 @@ void PearlsTaxidermy::gameOver(){
          << "of you. Suddenly the world fades to black...\n\n\n\n";
 
     cout << "GAME OVER\n\n\n";
+
+
 
     continuePrompt();
 

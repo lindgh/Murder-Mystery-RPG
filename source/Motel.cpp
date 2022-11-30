@@ -24,7 +24,7 @@ void Motel::playScene(Detective *d){
         clearStream();
 
         switch (choice){
-            case 1: exploreRoom();
+            case 1: exploreRoom(d);
             break;
             case 2: goToMyRoom();
             break;
@@ -61,7 +61,7 @@ void Motel::exitRoom203AfterExplore(){
 }
 
 //once here, after exploring, "force player to go to their room."
-void Motel::exploreRoom(){
+void Motel::exploreRoom(Detective *d){
 
     int choice;
     //clear terminal
@@ -81,7 +81,7 @@ void Motel::exploreRoom(){
 
     while(choice != 4){ 
      switch (choice){
-            case 1: exploreBathroom();
+            case 1: exploreBathroom(d);
             break;
             case 2: exploreDrawers();
             break;
@@ -110,7 +110,7 @@ void Motel::exploreRoom(){
 
 
 //clues found in bathroom -> trashcan: receipt and pack of cinammon gums.
-void Motel::exploreBathroom(){
+void Motel::exploreBathroom(Detective *d){
  
 
     cout << "\nYou enter the bathroom. It looks fairly plain, with nothing too outside of the " 
@@ -121,6 +121,12 @@ void Motel::exploreBathroom(){
     cout << "Huh, that's odd. It only has two things in it: an empty packet of cinnamon gum and a receipt "
          << "from the Leaky Diner. Very curious. You inspect the receipt further. \"One blueberry muffin, 2 raw eggs in a cup.\" An aquired "
          << "taste for sure...\n\n";
+
+    cout << "[*You have gained 10 points*]\n[*New location unlocked: Diner*]\n" << endl;
+        d->setPoints(10);
+        continuePrompt();
+
+        cout << "[Your points currently: " << d->getPoints() << "]" << endl;
 
     continuePrompt();
 

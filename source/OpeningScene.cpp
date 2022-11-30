@@ -1,5 +1,6 @@
 #include "../header/OpeningScene.hpp"
 #include "../header/Detective.hpp"
+#include "../header/Story.hpp"
 #include <limits.h>
 
 
@@ -164,6 +165,10 @@ void OpeningScene::playScene(Detective *aDetective) {
 
         cout << "[Your points currently: " << aDetective->getPoints() << "]" <<
         "\n\n[GAME OVER]\n" << endl;
+
+        // gameOverFlag = true;
+
+
     }
 
     continuePrompt();
