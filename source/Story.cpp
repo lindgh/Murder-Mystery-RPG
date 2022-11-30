@@ -46,6 +46,9 @@ void Story::buildStory(Detective *d){
             case 5: mansonsCS.playScene(d);
             break;
             case 6: pearlsT.playScene(d);
+            break;
+            case 7: guessKiller();
+            break;
         }
 
         // displayMenu(d, max);
