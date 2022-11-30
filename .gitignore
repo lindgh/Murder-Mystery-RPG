@@ -13,3 +13,4 @@ googletest-build/
 googletest-download/
 googletest-src/
 main.cpp
+lib/libgmock.a
