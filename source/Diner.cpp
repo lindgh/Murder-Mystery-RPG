@@ -4,8 +4,8 @@
 
 void Diner::talkToGentleman(Detective *aDetective) {
     cout << "\nYou decide to talk to the gentleman reading the article. Peering" <<
-    " over his shoulder, you realize the article he's reading is about the" <<
-    " Hollands' murder. You're intrigued, and decide to ask him a question." <<
+    " over his \nshoulder, you realize the article he's reading is about the" <<
+    " Hollands' murder. \nYou're intrigued, and decide to ask him a question." <<
     "\n\nWhat would you like to ask him?\n[Enter '1' to ask if he knew the" <<
     " Hollands]\n[Enter '2' to ask what he thinks about the murder]\n\nEnter your choice: ";
 
@@ -16,28 +16,28 @@ void Diner::talkToGentleman(Detective *aDetective) {
 
     if (choice == 1) {
         cout << "\n\"Hello,\" you greet him. \"Did you know the Hollands" <<
-        " by any chance?\" He turns to you, slightly startled at first," <<
+        " by any chance?\" He turns to \nyou, slightly startled at first," <<
         " but smiles at you nonetheless.\n\n\"Oh, yes! I work---well, used" <<
-        " to---for Mr. Holland. He was a good man, you know, he would have" <<
+        " to---for Mr. Holland. He was a good man, you know, \nhe would have" <<
         " a New Year's party every year at his lovely home for all his" <<
-        " employees,\" he says, stirring a mug of coffee that looks like" <<
-        " it's gone cold. \"The house was truly stunning... Though, I guess" <<
-        " it's tainted now,\" he sighs." << endl;
+        " \nemployees,\" he says, stirring a mug of coffee that looks like" <<
+        " it's gone cold. \"The \nhouse was truly stunning... Though, I guess" <<
+        " it's tainted now,\" he sighs.\n" << endl;
         continuePrompt();
     }
     else {
         cout << "\n\"Crazy crime, huh?\"\n\n\"Oh, you bet,\" he shakes his" <<
-        " head. \"I can't believe someone is just running 'round town and" <<
+        " head. \"I can't believe someone is just running \n'round town and" <<
         " strangling folks. It gives me the shivers... And to think he got" <<
-        " those poor folk in their house. It was truly a lovely home, you" <<
-        " should have seen it!\"" << endl;
+        " \nthose poor folk in their house. It was truly a lovely home, you" <<
+        " should have \nseen it!\"\n" << endl;
         continuePrompt();
     }
 
     cout << "Intrigued, you ask him if he remembers where the Holland residence" <<
-    " is. \"1 Pivet Drive, if my memory serves me right,\" he chuckles. \"It's" <<
-    " just a few blocks down from here.\n\nYou thank the old man and let him go" <<
-    " back to his reading." << endl;
+    " is. \"1 Pivet \nDrive, if my memory serves me right,\" he chuckles. \"It's" <<
+    " just a few blocks down \nfrom here.\n\nYou thank the old man and let him go" <<
+    " back to his reading.\n" << endl;
     continuePrompt();
     
     if (aDetective->dinerClue.getFlag() == false) {
@@ -53,15 +53,15 @@ void Diner::talkToGentleman(Detective *aDetective) {
 void Diner::eavesdrop() {
     cout << "\nYou decide to listen in on the argument between Abby and" <<
     " the stranger.\n\n\"Listen young man,\" she yells. \"If you wanna move" <<
-    " out and find your own place to live with Pearl, you need to take your" <<
+    " out and find your own place \nto live with Pearl, you need to take your" <<
     " job seriously!\"\n\n\"Sorry, Ma,\" the stranger sheepishly smiles at" <<
-    " Abby." << endl; 
+    " Abby.\n" << endl; 
     continuePrompt();
 }
 
 void Diner::mindYourBusiness() {
     cout << "\nYou decide to mind your own business, counting the cars that" << 
-    " pass by the diner window." << endl;
+    " pass by the diner \nwindow.\n" << endl;
     continuePrompt();
 }
 
@@ -90,10 +90,10 @@ void Diner::playScene(Detective *aDetective) {
 
     clearStream();
     cout << "\nYou make your way to the diner for some fuel. As" <<
-    " you sit down at the bar, Abby, the waitress from yesterday," <<
+    " you sit down at the bar, Abby, \nthe waitress from yesterday," <<
     " spots you and heads over with the menu.\n\n\"Glad to see you" <<
     " decided to stick around, sugar,\" she smiles. \"What can I get" <<
-    " you today?\"" << endl;
+    " \nyou today?\"\n" << endl;
     continuePrompt();
 
     cout << "You glance at the menu. What are you going to order?\n[Enter" <<
@@ -116,15 +116,15 @@ void Diner::playScene(Detective *aDetective) {
     }
 
     cout << "\nAbby goes off to get your order prepared. You look" <<
-    " around the diner and notice it's a bit slow today. There's a" <<
+    " around the diner and notice \nit's a bit slow today. \n\nThere's a" <<
     " family enjoying breakfast by one of the booths and an old gentleman" <<
-    " nearby you reading an article on his laptop in deep concentration.\n";
+    " \nnearby you reading an article on his laptop in deep concentration.\n" << endl;;
     continuePrompt();
 
     cout << "Suddenly, a young man enters the diner and makes a beeline" <<
-    " for Abby. She seems to recognize him because her expression" << 
-    " immediately turns sour. They get into a hushed argument behind" <<
-    " the counter." << endl;
+    " for Abby. She seems \nto recognize him because her expression" << 
+    " immediately turns sour. They get into a \nhushed argument behind" <<
+    " the counter.\n" << endl;
     continuePrompt();
 
     dinerPrompt(aDetective);
@@ -142,7 +142,7 @@ void Diner::playScene(Detective *aDetective) {
         } 
         else {
             cout << "\nAbby brings you your order. \"Enjoy, darling,\" she smiles." <<
-            " You enjoy your " << userOrder << " before heading out." << endl;
+            " You enjoy your \n" << userOrder << " before heading out.\n" << endl;
             continuePrompt();
 
             cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;

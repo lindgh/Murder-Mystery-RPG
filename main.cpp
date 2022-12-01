@@ -19,8 +19,16 @@ int main() {
 
     Story startGame;
 
-    //begin game
-    startGame.buildStory(d);    
+    //Motel m;
+    //Diner di;
+    //Hollands h;
+    //CountryClub c;
+    //Mansons ms;
+    //PearlsTaxidermy p;
+
+    //c.playScene(d);
+
+    startGame.buildStory(d);
 
     delete d;
 

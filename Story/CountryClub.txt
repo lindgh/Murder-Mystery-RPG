@@ -1,3 +1,4 @@
-You arrive at the Auburndale Country Club. It doesn’t look all that busy today. Would you like to approach someone?
+You arrive at the Auburndale Country Club. It doesn’t look all that busy today.
+Would you like to approach someone?
 
 decision
