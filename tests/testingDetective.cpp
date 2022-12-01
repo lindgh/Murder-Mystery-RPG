@@ -11,3 +11,9 @@ TEST(DetectiveTests, pointsFunctions) {
     aDetective.setPoints(10);
     EXPECT_EQ(aDetective.getPoints(), 20);
 }
+
+TEST(DetectiveTests, gameoverFunctions) {
+    Detective aDetective;
+    aDetective.setGameOverFlag();
+    EXPECT_EQ(aDetective.getGameOverFlag(), -999);
+}
