@@ -47,7 +47,7 @@ void Story::buildStory(Detective *d){
             break;
             case 6: pearlsT.playScene(d);
             break;
-            case 7: guessKiller();
+            case 7: guessKiller(d);
             break;
         }
 
@@ -192,7 +192,7 @@ void Story::validateInput(int &input, int max, int min)
     input = num;       // at this point, num would be valid.
 }
 
-void Story::guessKiller()
+void Story::guessKiller(Detective *d)
 {
     vector<string> suspects;
     string guess;
@@ -222,6 +222,7 @@ void Story::guessKiller()
     cout << "You guessed the killer incorrectly!!!" << endl;
     cout << "You DIE! The killer gets you:(" << endl;
     d->setGameOverFlag();
+
     return;
 }
 

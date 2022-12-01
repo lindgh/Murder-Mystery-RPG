@@ -7,8 +7,9 @@ void Mansons::playScene(Detective *aDetective)
     ifstream scenceContainer;
     string line;
 
-    clearStream();
+    // clearStream();
     cout << "\n";
+
     scenceContainer.open("./Story/Mansons.txt");
 
     if (scenceContainer.is_open())
@@ -60,20 +61,18 @@ void Mansons::setDecisions(Detective *aDetective)
 
     Choice *choice = &decisions;
     int option = 0;
+    int continueFlag = 1;
 
     while (true)
     {
-        if (aDetective->mansonsClue.getFlag() == false && choice == &four)
-        {
-            cout << "[*You have gained 10 points*]\n[*New location unlocked: Pearl's Taxidermy*]\n" << endl;
-            aDetective->setPoints(10);
-            cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
-            aDetective->mansonsClue.setFlag(true);
-        }
-
         if (choice->isOutput())
         {
             choice->displayOutput();
+        }
+
+        if (choice == &zero)
+        {
+            break;
         }
 
         if (choice->isPrompt())
@@ -89,9 +88,46 @@ void Mansons::setDecisions(Detective *aDetective)
 
             choice = choice->getResult(option);
         }
-        else
+
+        if (choice == &one)
         {
-            break;
+            choice->displayOutput();
+            choice->displayPrompt();
+
+            while (continueFlag)
+            {
+                cout << "----Avaliable locations----" << endl;
+                one.displayResults();
+
+                cout << "\nEnter your choice: ";
+
+                validateInput(option, one.getResultsSize() - 1, 0);
+
+                clearStream();
+
+                choice = one.getResult(option);
+
+                if (choice->isOutput())
+                {
+                    choice->displayOutput();
+                }
+
+                if (aDetective->mansonsClue.getFlag() == false && choice == &four)
+                {
+                    cout << "[*You have gained 10 points*]\n[*New location unlocked: Pearl's Taxidermy*]\n"
+                         << endl;
+                    aDetective->setPoints(10);
+                    cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
+                    aDetective->mansonsClue.setFlag(true);
+                }
+
+                cout << "\nWould you like to continue exploring? (1 - yes : 0 - no): ";
+                cin >> continueFlag;
+                cout << endl;
+            }
+
+            cout << "Exiting the Mansons...\n\n";
+            return;
         }
     }
 }
