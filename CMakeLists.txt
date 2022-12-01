@@ -47,8 +47,9 @@ set(SOURCE_FILES source/Locations.cpp source/OpeningScene.cpp
                 source/Story.cpp)
 add_executable(main main.cpp ${SOURCE_FILES})
 
-set(TEST_FILES tests/testingOpenScene.cpp tests/testingDetective.cpp 
-                tests/testingDiner.cpp tests/testingClueFlag.cpp tests/testingMotel.cpp)
+set(TEST_FILES tests/testingHollands.cpp tests/testingDetective.cpp 
+                tests/testingDiner.cpp tests/testingClueFlag.cpp tests/testingMotel.cpp
+                tests/testingPearlsTaxidermy.cpp)
 add_executable(test ${TEST_FILES} ${SOURCE_FILES})
 
 target_link_libraries(test gmock gtest gtest_main)

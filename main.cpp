@@ -17,20 +17,14 @@ int main() {
     system("clear");
     Detective *d = new Detective(); //create player
 
+    //begin game
     Story startGame;
-
-    //Motel m;
-    //Diner di;
-    //Hollands h;
-    //CountryClub c;
-    //Mansons ms;
-    //PearlsTaxidermy p;
-
-    //c.playScene(d);
-
     startGame.buildStory(d);
 
+
     delete d;
+
+    return 0;
 
     return 0;
 
