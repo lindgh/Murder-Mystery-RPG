@@ -100,6 +100,8 @@ void Motel::exploreRoom(Detective *d){
         exitRoom203AfterExplore();
     }
 
+    cout << "Leaving Motel...\n\n";
+
 
 }
 

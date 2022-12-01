@@ -149,4 +149,6 @@ void Diner::playScene(Detective *aDetective) {
             continuePrompt();
         }
     }
+
+    cout << "Leaving Diner...\n\n";
 }

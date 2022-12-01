@@ -60,6 +60,8 @@ void PearlsTaxidermy::playScene(Detective *d){
         LeaveStore(d);
     }
 
+    cout << "Leaving Pearl's Taxidermy...\n\n";
+
 }
 
 

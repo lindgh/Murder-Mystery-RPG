@@ -62,7 +62,6 @@ void Hollands::playScene(Detective *d){
         LeaveHollands();
     }
 
-    //testing purpose
     cout <<"Leaving Hollands Crime Scene...\n\n";
 
 }
