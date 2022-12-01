@@ -41,7 +41,10 @@
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ > Our project was written in C++ and created entirely on VS Code. To run, have VS Code installed. Clone this repository on VS Code so that you have all the proper files. Then, to run the program, run the following lines of code:
+ > * cmake .
+ > * make
+ > * bin/main
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
