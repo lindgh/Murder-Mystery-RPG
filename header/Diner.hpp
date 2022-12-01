@@ -11,11 +11,11 @@ using namespace std;
 class Diner: public Location
 {
   public:
-    virtual void playScene(Detective *aDetective);
+    virtual void playScene(Detective *d);
     void mindYourBusiness();
     void eavesdrop();
-    void talkToGentleman(Detective *aDetective);
-    void dinerPrompt(Detective *aDetective);
+    void talkToGentleman(Detective *d);
+    void dinerPrompt(Detective *d);
 
   private:
     string name = "Diner";

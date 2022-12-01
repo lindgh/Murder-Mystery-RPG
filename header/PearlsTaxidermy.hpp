@@ -18,8 +18,8 @@ public:
     void investigateCounter();
     void investigateWallOfPictures();
     void investigateEmployee();
-    void LeaveStore();
-    void gameOver();
+    void LeaveStore(Detective *d);
+    void gameOver(Detective *d);
 
 private:
 

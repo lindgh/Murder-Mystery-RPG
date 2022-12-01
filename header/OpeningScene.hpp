@@ -11,7 +11,7 @@ using namespace std;
 class OpeningScene: public Location
 {
   public:
-    virtual void playScene(Detective *aDetective);
+    virtual void playScene(Detective *d);
 
   private:
     string name = "Opening Scene";

@@ -7,7 +7,11 @@
 #include "../header/Detective.hpp"
 
 
+
+
 using namespace std;
+
+
 
 class Location
 {
