@@ -21,14 +21,12 @@ class Story
 public:
     void displayMenu(Detective *d, int& max); //display locations
     void buildStory(Detective *d); //call in main manage everything
-    void guessKiller(); 
+    void guessKiller(Detective *d); 
     void validateInput(int &input, int max, int min);
 
 
 
 private:
-
-    bool clueFound;
     int gameOverFlag = 0;
 
 };

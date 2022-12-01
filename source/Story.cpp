@@ -46,6 +46,9 @@ void Story::buildStory(Detective *d){
             case 5: mansonsCS.playScene(d);
             break;
             case 6: pearlsT.playScene(d);
+            break;
+            case 7: guessKiller(d);
+            break;
         }
 
         // displayMenu(d, max);
@@ -53,6 +56,8 @@ void Story::buildStory(Detective *d){
         gameOverFlag = d->getGameOverFlag();
 
     }//end while
+
+    cout << "\nThank you for playing Murder Mystery: A Text-Based RPG!\n" << endl;
 
 
 }
@@ -145,6 +150,8 @@ else {
 cout <<     "|                                             |\n" <<
             "===============================================\n" << endl; 
 
+cout << "Enter your choice: ";
+
 }
 
 
@@ -183,5 +190,40 @@ void Story::validateInput(int &input, int max, int min)
     } while (invalid); // Will validate that userInput is not a char, and
                        //  within bounds of menu options.
     input = num;       // at this point, num would be valid.
+}
+
+void Story::guessKiller(Detective *d)
+{
+    vector<string> suspects;
+    string guess;
+
+    suspects.push_back("Arthur");
+    suspects.push_back("Waitress");
+    suspects.push_back("Pearl");
+    suspects.push_back("Robert");
+
+    cout << "   ----Guess the killer----    " << endl;
+    cout << "   ----   Suspects     ----    \n" << endl;
+
+    for (vector<string>::iterator iter  = suspects.begin(); iter != suspects.end(); ++iter) 
+    {
+        cout << "\t" << *iter << endl;
+    }
+
+    cout << endl << "Enter your choice: ";
+    cin >> guess;
+
+    if (guess == "Arthur") 
+    {
+        cout << "You guessed the killer correctly!!!" << endl;
+        return;
+    }
+
+    cout << "You DIE! The killer gets you:(" << endl;
+    cout << "\n\n\n\n\n[GAME OVER]\n\n\n\n\n-----";
+
+    d->setGameOverFlag();
+
+    return;
 }
 

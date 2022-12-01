@@ -45,20 +45,20 @@ int Choice::getResultsSize()
 
 void Choice::displayResults()
 {
-    int option = 0;
+    int option = 1;
 
     for (map<string, Choice *>::iterator iter = results.begin(); iter != results.end(); iter++)
     {
-        cout << "Enter "
+        cout << "[Enter "
              << "'" << option << "'"
-             << " to " << iter->first << endl;
+             << " to " << iter->first << "]" << endl;
         option++;
     }
 }
 
 Choice *Choice::getResult(int choice)
 {
-    int option = 0;
+    int option = 1;
 
     for (map<string, Choice *>::iterator iter = results.begin(); iter != results.end(); iter++)
     {

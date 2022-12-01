@@ -7,6 +7,9 @@ void Mansons::playScene(Detective *aDetective)
     ifstream scenceContainer;
     string line;
 
+    //clearStream();
+    cout << "\n";
+
     scenceContainer.open("./Story/Mansons.txt");
 
     if (scenceContainer.is_open())
@@ -20,18 +23,21 @@ void Mansons::playScene(Detective *aDetective)
 
             cout << line << endl;
         }
+        continuePrompt();
     }
     else
     {
         cout << "Error opening file.\n";
     }
 
-    setDecisions();
+    setDecisions(aDetective);
+
+    cout << "Leaving the Mansons...\n\n";
 
     scenceContainer.close();
 }
 
-void Mansons::setDecisions()
+void Mansons::setDecisions(Detective *aDetective)
 {
     // create the decision 'tree'
     Choice decisions;
@@ -43,13 +49,13 @@ void Mansons::setDecisions()
 
     decisions.setPrompt("What would you like to do?");
     zero.setOutput("\nYou decide it is better to not break the law and leave the Manson’s property.\nIt’s not worth getting in trouble.\n");
-    one.setOutput("\nThere is no turning back.\nYou cross the yellow tape, and approach the front door.\nYou give the door knob a shake and find that it is locked.\nLooking around, you find a rock and throw it at the window next to the door and enter the home.\n");
+    one.setOutput("\nThere is no turning back.\n\nYou cross the yellow tape, and approach the front door. You give the door knob \na shake and find that it is locked. Looking around, you find a rock and throw \nit at the window next to the door and enter the home.\n");
     one.setPrompt("What would you like to do?");
-    two.setOutput("\nYou enter the office room and approach a desk.\nYou are looking through the drawers, and you see a receipt for a $14K crocodile head, and a lawsuit against Pearl’s Taxidermy… Interesting\n");
-    three.setOutput("\nYou enter the living room.\nWoah!!\nThese people knew how to live lavishly.\nThere entertainment area could be your whole home.\nAs you walk out and cross the room, in the corner of the you see a cord,\nthat looks like the one from Lyle’s Country club.\n");
-    four.setOutput("\nYou enter the kitchen.\nLike a typical family, their refrigerator is covered in a collage of pictures and magnets.\nUpon further inspection, you see a picture of all the victims holding stuffed animals outside a place called Pearls Taxidermy.\nYou also see a picture of the Mansons celebrating at the Leaky diner,\nwith Abby standing by the table with a birthday cake.\n");
+    two.setOutput("\nYou enter the office room and approach a desk. You look through the drawers and \nsee a receipt for a $14K crocodile head, along with a lawsuit against Pearl’s \nTaxidermy... Interesting.\n");
+    three.setOutput("\nYou enter the living room.\n\nWoah!! These people knew how to live lavishly. Their entertainment area could \nbe your whole home.\n\nAs you walk out and cross the room, in the corner you see a cord that \nlooks like the one from Auburndale's Country club.\n");
+    four.setOutput("\nYou enter the kitchen.\n\nLike a typical family, their refrigerator is covered in a collage of pictures and \nmagnets. Upon further inspection, you see a picture of all the victims holding \nstuffed animals outside a place called Pearls Taxidermy.\n\nYou also see a picture of the Mansons celebrating at the diner, with Abby \nstanding by the table with a birthday cake.\n");
 
-    decisions.setResult("Leave", &zero);
+    decisions.setResult("leave", &zero);
     decisions.setResult("break in and enter the home", &one);
 
     one.setResult("go to the office room", &two);
@@ -58,12 +64,19 @@ void Mansons::setDecisions()
 
     Choice *choice = &decisions;
     int option = 0;
+    int continueFlag = 1;
 
     while (true)
     {
         if (choice->isOutput())
         {
             choice->displayOutput();
+        }
+
+        if (choice == &zero)
+        {
+            continuePrompt();
+            break;
         }
 
         if (choice->isPrompt())
@@ -73,15 +86,57 @@ void Mansons::setDecisions()
 
             cout << "\nEnter your choice: ";
 
-            validateInput(option, choice->getResultsSize() - 1, 0);
+            validateInput(option, choice->getResultsSize(), 1);
 
             clearStream();
 
             choice = choice->getResult(option);
         }
-        else
+
+        if (choice == &one)
         {
-            break;
+            choice->displayOutput();
+            continuePrompt();
+            choice->displayPrompt();
+
+            while (continueFlag == 1)
+            {
+                cout << "\nLocations to explore:" << endl;
+                one.displayResults();
+
+                cout << "\nEnter your choice: ";
+
+                validateInput(option, one.getResultsSize(), 1);
+
+                clearStream();
+
+                choice = one.getResult(option);
+
+                if (choice->isOutput())
+                {
+                    choice->displayOutput();
+                    continuePrompt();
+                }
+
+                if (aDetective->mansonsClue.getFlag() == false && choice == &four)
+                {
+                    cout << "[*You have gained 10 points*]\n[*New location unlocked: Pearl's Taxidermy*]\n"
+                         << endl;
+                    aDetective->setPoints(10);
+                    cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
+                    aDetective->mansonsClue.setFlag(true);
+                    continuePrompt();
+                }
+
+                cout << "\nWould you like to continue exploring?\n[Enter '1' to keep exploring]\n[Enter '0' to leave]\n";
+                cout << "\nEnter your choice: ";
+                validateInput(continueFlag, 1, 0);
+                clearStream();
+            }
+
+            cout << "\nI guess there's nothing much to do here then...\n";
+            continuePrompt();
+            return;
         }
     }
 }
