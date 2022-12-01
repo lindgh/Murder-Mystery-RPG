@@ -45,7 +45,7 @@ int Choice::getResultsSize()
 
 void Choice::displayResults()
 {
-    int option = 0;
+    int option = 1;
 
     for (map<string, Choice *>::iterator iter = results.begin(); iter != results.end(); iter++)
     {
@@ -58,7 +58,7 @@ void Choice::displayResults()
 
 Choice *Choice::getResult(int choice)
 {
-    int option = 0;
+    int option = 1;
 
     for (map<string, Choice *>::iterator iter = results.begin(); iter != results.end(); iter++)
     {

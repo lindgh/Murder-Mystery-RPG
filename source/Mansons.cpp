@@ -7,7 +7,7 @@ void Mansons::playScene(Detective *aDetective)
     ifstream scenceContainer;
     string line;
 
-    clearStream();
+    //clearStream();
     cout << "\n";
 
     scenceContainer.open("./Story/Mansons.txt");
@@ -31,6 +31,8 @@ void Mansons::playScene(Detective *aDetective)
     }
 
     setDecisions(aDetective);
+
+    cout << "Leaving the Mansons...\n\n";
 
     scenceContainer.close();
 }
@@ -84,7 +86,7 @@ void Mansons::setDecisions(Detective *aDetective)
 
             cout << "\nEnter your choice: ";
 
-            validateInput(option, choice->getResultsSize() - 1, 0);
+            validateInput(option, choice->getResultsSize(), 1);
 
             clearStream();
 
@@ -104,7 +106,7 @@ void Mansons::setDecisions(Detective *aDetective)
 
                 cout << "\nEnter your choice: ";
 
-                validateInput(option, one.getResultsSize() - 1, 0);
+                validateInput(option, one.getResultsSize(), 1);
 
                 clearStream();
 

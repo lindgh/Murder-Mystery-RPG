@@ -91,7 +91,7 @@ void CountryClub::setDecisions(Detective *aDetective)
 
             cout << "\nEnter your choice: ";
 
-            validateInput(option, choice->getResultsSize() - 1, 0);
+            validateInput(option, choice->getResultsSize(), 1);
 
             clearStream();
 
