@@ -44,7 +44,6 @@ void CountryClub::playScene(Detective *aDetective)
     cout << "[Your points currently: " << aDetective->getPoints() << "]\n" << endl;
     continuePrompt();
     cout << "Leaving Auburndale Country Club...\n" << endl;
-    continuePrompt();
 
     scenceContainer.close();
 }

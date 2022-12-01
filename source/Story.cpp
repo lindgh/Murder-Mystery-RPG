@@ -203,7 +203,7 @@ void Story::guessKiller(Detective *d)
     suspects.push_back("Robert");
 
     cout << "   ----Guess the killer----    " << endl;
-    cout << "   ----   Suspects     ----    " << endl;
+    cout << "   ----   Suspects     ----    \n" << endl;
 
     for (vector<string>::iterator iter  = suspects.begin(); iter != suspects.end(); ++iter) 
     {
@@ -219,8 +219,9 @@ void Story::guessKiller(Detective *d)
         return;
     }
 
-    cout << "You guessed the killer incorrectly!!!" << endl;
     cout << "You DIE! The killer gets you:(" << endl;
+    cout << "\n\n\n\n\n[GAME OVER]\n\n\n\n\n-----";
+
     d->setGameOverFlag();
 
     return;
