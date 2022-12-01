@@ -26,7 +26,9 @@
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > ![UML Design](./input_output_0.png)
+ > ![UML Design](./input_output_1.png)
+
  ## Installation/Usage
  > Our project was written in C++ and created entirely on Virtual Studio Code. To run, have Virtual Studio Code installed. Clone this repository on VS Code so that you have all the proper files. Then, to run the program, run the following lines of code:
  > * cmake .
