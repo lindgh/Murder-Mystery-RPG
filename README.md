@@ -27,6 +27,7 @@
  
  ## Screenshots
  > ![UML Design](./input_output_0.png)
+ 
  > ![UML Design](./input_output_1.png)
 
  ## Installation/Usage
