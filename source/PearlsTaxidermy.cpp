@@ -9,15 +9,20 @@ using namespace std;
 void PearlsTaxidermy::playScene(Detective *d){ 
     int choice;
 
-    cout << "You make your way into Pearl's Taxidermy shop. The air feels stale, and you feel as "
+    clearStream();
+    cout << "\nYou make your way into Pearl's Taxidermy shop. The air feels stale, and you feel as "
          << "though the beady dead eyes of the mounted animals along the walls are watching your "
          << "every move. While this place is unsettling, curiosity gets the best of you. After all, "
-         << " the vitcims are connected one way or another to this place...\n\n";
+         << " the vitcims are connected one way or another to this place...";
+         continuePrompt();
 
-     cout << "[*You have gained 10 points*]\n[*You can guess the killer now!*]\n" << endl;
+     if (d->pearlsTClue.getFlag() == false) {
+        cout << "[*You have gained 10 points*]\n[*New menu option unlocked*]\n" << endl;
         d->setPoints(10);
+        d->pearlsTClue.setFlag(true);
         cout << "[Your points currently: " << d->getPoints() << "]" << endl;
         continuePrompt();
+    }
 
     cout << "Would you like to do?\n";
     cout << "[Enter '1' to Approach the counter]\n";
@@ -54,10 +59,6 @@ void PearlsTaxidermy::playScene(Detective *d){
     if(choice == 4){
         LeaveStore(d);
     }
-
-    //testing purpose
-    cout <<"\n\n exiting Pearl's Taxidermy location...\n\n";
-    continuePrompt();
 
 }
 
@@ -129,7 +130,7 @@ void PearlsTaxidermy::investigateEmployee(){
             cout << "\n\nYou finally ask Pearl who she suspects the killer to be.\n";
             cout << "Pearl stops shelving and looks thoughtfully for a second. \"Hmm, thats a pretty "
                  << "loaded question to ask someone... maybe its you!\" Pearl laughs. Then she says "
-                 << "I know you were interested in the case [userName], but I would be careful if I were you "
+                 << "I know you were interested in the case, but I would be careful if I were you "
                  << "since the whole town is on edge, everyone is suspecting everyone\".";
             cout << "\n\nIt seems Pearl does not take this question seriously, so you laugh along with her.\n\n";
 
@@ -157,7 +158,7 @@ void PearlsTaxidermy::investigateEmployee(){
     } //end while loop
 
      clearStream();
-    cout << "\n You end the converstation with Pearl and head away...\n\n";
+    cout << "\nYou end the converstation with Pearl and head away...\n\n";
     continuePrompt();
 
 

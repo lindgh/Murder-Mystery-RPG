@@ -6,7 +6,9 @@
 
 void OpeningScene::playScene(Detective *aDetective) {
     //string cont;
-    cout << "\nWelcome to Murder Mystery: A Text-Based RPG" << endl;
+    cout << "\nWelcome to Murder Mystery: A Text-Based RPG\n" <<
+    "Authors: Linda Ghunaim, Angela Han, Adlai Morales-Bravo, Rawan Hassabelrasoul" << endl;
+    continuePrompt();
     cout << "[Your points currently: " << aDetective->getPoints() << 
     "]\n"<< endl;
     
@@ -102,7 +104,7 @@ void OpeningScene::playScene(Detective *aDetective) {
     continuePrompt();
 
     cout << "\"Oh, that,\" she sighs. \"Poor folks. The Hollands are well" <<
-    " known around here. Very rich folk. My son, Arthur, works at the country" <<
+    " known around here. Very rich. My son, Arthur, works at the country" <<
     " club they'd visit often, nice folks. Tipped him well.\"" << endl;
     continuePrompt();
 

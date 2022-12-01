@@ -7,6 +7,8 @@ void CountryClub::playScene(Detective *aDetective)
     ifstream scenceContainer;
     string line;
 
+    clearStream();
+    cout << "\n";
     scenceContainer.open("./Story/CountryClub.txt");
 
     if (scenceContainer.is_open())
@@ -28,7 +30,7 @@ void CountryClub::playScene(Detective *aDetective)
 
     int choice;
 
-    cout << "Enter 1 if so, or 0 if you would like to leave.\n";
+    cout << "[Enter '1' to approach someone]\n[Enter '0' to leave]\n";
     cin >> choice;
 
     if (choice == 1)
@@ -61,7 +63,7 @@ void CountryClub::setDecisions(Detective *aDetective)
     {
         if (aDetective->countryClubClue.getFlag() == false && (choice == &first || choice == &second))
         {
-            cout << "[*You have gained 10 points*]" << endl;
+            cout << "[*You have gained 10 points*]\n[*New location unlocked: Mansons Crime Scene*]\n" << endl;
             aDetective->setPoints(10);
             cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
             aDetective->countryClubClue.setFlag(true);

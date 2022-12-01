@@ -9,11 +9,12 @@ using namespace std;
 void Motel::playScene(Detective *d){ 
     int choice;
 
-    
-        cout << "You arrive at the mostly deserted motel and make your way up the creaky stairs. " <<
-                "As you pass the halls, you look for room 204. \n201 \n202 \n203. You suddenly " <<
+        clearStream();
+        cout << "\nYou arrive at the mostly deserted motel and make your way up the creaky stairs. " <<
+                "As you pass the halls, you look for room 204. \n\n201 \n\n202 \n\n203. You suddenly " <<
                 "get a strong whiff of bleach. That is odd. This room's door is left ajar. And your room " <<
-                "is just past it.\n\n";
+                "is just past it.\n";
+        continuePrompt();
         cout << "Would you like to do?\n";
         cout << "[Enter '1' to explore room 203]\n";
         cout << "[Enter '2' to continue to your room]\n";
@@ -29,19 +30,13 @@ void Motel::playScene(Detective *d){
             case 2: goToMyRoom();
             break;
         }
-
-    //testing purpose
-    cout <<"\n exiting motel location...\n\n";
-    continuePrompt();
-
-    
 }
 
 void Motel::goToMyRoom(){
     //clear terminal 
 
     cout << "Someone probably forgot to close their door. Maybe minding your business is for the "
-            "best... You make your way to your room and take a rest...\n";
+            "best... You make your way to your room and rest...\n";
 
             //flag here to stop
     continuePrompt();
@@ -51,8 +46,8 @@ void Motel::goToMyRoom(){
 
 void Motel::exitRoom203AfterExplore(){
 
-    cout << "\nAfter exploring room203, you decide to head to your own room.\n"
-         << "best to rest up for more investigating later...\n\n";
+    cout << "\nAfter exploring room 203, you decide to head to your own room. "
+         << "Best to rest up for more investigating later...\n\n";
 
             //flag here to stop
     continuePrompt();
@@ -116,21 +111,22 @@ void Motel::exploreBathroom(Detective *d){
     cout << "\nYou enter the bathroom. It looks fairly plain, with nothing too outside of the " 
          << "ordinary for used motel bathroom. \n\nThe faucet is dripping. Quite questionable behavior "
          << "on the part of the room owner, but than again, you are snooping arround uninveited. "
-         << "Maybe the trash can holds some secrets.\n\n";
+         << "Maybe the trash can holds some secrets.\n";
+         continuePrompt();
 
     cout << "Huh, that's odd. It only has two things in it: an empty packet of cinnamon gum and a receipt "
          << "from the Leaky Diner. Very curious. You inspect the receipt further. \"One blueberry muffin, 2 raw eggs in a cup.\" An aquired "
-         << "taste for sure...\n\n";
+         << "taste for sure...\n";
+         continuePrompt();
 
-    cout << "[*You have gained 10 points*]\n[*New location unlocked: Diner*]\n" << endl;
+
+    if (d->motelClue.getFlag() == false) {
+        cout << "[*You have gained 10 points*]\n[*New location unlocked: Diner*]\n" << endl;
         d->setPoints(10);
-        continuePrompt();
-
+        d->motelClue.setFlag(true);
         cout << "[Your points currently: " << d->getPoints() << "]" << endl;
-
-    continuePrompt();
-
-
+        continuePrompt();
+    }
 }
 
 void Motel::exploreDrawers(){
@@ -141,7 +137,7 @@ void Motel::exploreDrawers(){
 
     cout << "All the drawers are empty, except for two. You inspect them further. In one, "
          <<"you find a week-old article about Mr. Holland's recent business ventures. In the other, "
-         << "you find a jump rope. Interesting.\n\n";
+         << "you find a jump rope. Interesting.\n";
 
         
     continuePrompt();
@@ -151,10 +147,9 @@ void Motel::exploreDrawers(){
 
 void Motel::exploreNightStand(){
 
-
     cout << "\nYou look around the room and see some items on the night stand next to the bed. ";
     cout << "You see a packet of cigarettes... and a half eaten cinnamon bun, with ants "
-         << "crawling all over the sugary bread. Yuck!\n\n";
+         << "crawling all over the sugary bread. Yuck!\n";
 
     continuePrompt();   
 

@@ -88,6 +88,7 @@ void Diner::dinerPrompt(Detective *aDetective) {
 
 void Diner::playScene(Detective *aDetective) {
 
+    clearStream();
     cout << "\nYou make your way to the diner for some fuel. As" <<
     " you sit down at the bar, Abby, the waitress from yesterday," <<
     " spots you and heads over with the menu.\n\n\"Glad to see you" <<

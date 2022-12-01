@@ -27,8 +27,6 @@ public:
 
 
 private:
-
-    bool clueFound;
     int gameOverFlag = 0;
 
 };

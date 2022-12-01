@@ -7,6 +7,8 @@ void Mansons::playScene(Detective *aDetective)
     ifstream scenceContainer;
     string line;
 
+    clearStream();
+    cout << "\n";
     scenceContainer.open("./Story/Mansons.txt");
 
     if (scenceContainer.is_open())
@@ -63,7 +65,7 @@ void Mansons::setDecisions(Detective *aDetective)
     {
         if (aDetective->mansonsClue.getFlag() == false && choice == &four)
         {
-            cout << "[*You have gained 10 points*]" << endl;
+            cout << "[*You have gained 10 points*]\n[*New location unlocked: Pearl's Taxidermy*]\n" << endl;
             aDetective->setPoints(10);
             cout << "[Your points currently: " << aDetective->getPoints() << "]" << endl;
             aDetective->mansonsClue.setFlag(true);

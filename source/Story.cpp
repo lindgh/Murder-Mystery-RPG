@@ -57,6 +57,8 @@ void Story::buildStory(Detective *d){
 
     }//end while
 
+    cout << "\nThank you for playing Murder Mystery: A Text-Based RPG!\n" << endl;
+
 
 }
 
@@ -148,6 +150,8 @@ else {
 cout <<     "|                                             |\n" <<
             "===============================================\n" << endl; 
 
+cout << "Enter your choice: ";
+
 }
 
 
@@ -217,6 +221,7 @@ void Story::guessKiller()
 
     cout << "You guessed the killer incorrectly!!!" << endl;
     cout << "You DIE! The killer gets you:(" << endl;
+    d->setGameOverFlag();
     return;
 }
 

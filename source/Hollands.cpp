@@ -9,7 +9,8 @@ using namespace std;
 void Hollands::playScene(Detective *d){ 
     int choice;
 
-    cout << "You arrive at the neighborhood of the Hollands. You’re a few blocks away, but you might as well be "
+    clearStream();
+    cout << "\nYou arrive at the neighborhood of the Hollands. You’re a few blocks away, but you might as well be "
          << "at the heart of the action with all the commotion you’re hearing. There’s police tape surrounding the "
          << "Holland mansion and the street is swarmed with both reporters and curious bystanders.\n";
     continuePrompt();
@@ -22,7 +23,8 @@ void Hollands::playScene(Detective *d){
 
     cout << "You survey the crowd. Most people seem to be concerned. Fearful, even. There are officers littered "
          << "around the scene, attempting and failing to quell the crowd’s hysteria. You notice one woman in "
-         << "particular, wearing a reporter’s vest, arguing with one of the officers.\n\n";
+         << "particular, wearing a reporter’s vest, arguing with one of the officers.\n";
+     continuePrompt();
 
     cout << "Would you like to approach someone?\n";
     cout << "[Enter '1' to Leave the Hollands]\n";
@@ -104,13 +106,6 @@ void Hollands::investigateReporter(Detective *d){
                  << "\"He works at the town country club that rich folk like Holland waste their days at "
                  << "The man can't go two seconds without talking about how much he hates Holland,\" she replies.\n";
                continuePrompt();
-            if (d->hollandsClue.getFlag() == false) {
-               cout << "[*You have gained 10 points*]\n[*New location unlocked: Auburndale Country Club*]\n" << endl;
-               d->setPoints(10);
-               d->hollandsClue.setFlag(true);
-               cout << "[Your points currently: " << d->getPoints() << "]" << endl;
-               continuePrompt();
-               }
             break;
         }
 
