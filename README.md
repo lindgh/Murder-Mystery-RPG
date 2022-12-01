@@ -44,4 +44,5 @@
  > Instructions on installing and running your application
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > We validted our project with gmock and gtest. We did this by creating Mock classes and Mock Methods for our locations and functions. We used it to test our game logic, which was based on user input. We passed in a value (from 1 - max) and made sure that the correct calls were made in each playScene() function for all locations.
  
