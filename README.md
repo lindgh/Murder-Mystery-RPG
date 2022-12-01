@@ -14,7 +14,7 @@
  
  > ## Phase II
 ## Class Diagram 
-![UML Design](./uml_project.png)
+![UML Design](./Murder Mystery RPG Diagram .drawio.png)
 
  > ### Description:
  > Within our UML diagram we have four major components that will be used to build our game. These components are Story, Detective, Journal, and Location. The Story object is the container for our story. It holds operations for switching scenes of the game. The location class will have gameplay for each scene, and contain clues for the storyline. The Story object will leverage the location class to organize the story. The Detective object represents the user. It will contain functions for user actions, such as interacting with the Journal object and Story object. The Journal object will be used for storing user notes and will have operations to interact with the notes taken down, such as reading and writing. 
