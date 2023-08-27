@@ -1,7 +1,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=8910715&assignment_repo_type=AssignmentRepo)
 
 # Murder Mystery RPG
- > Authors: [Rawan Hassabelrasoul](https://github.com/rawanhass), [Angela Han](https://github.com/AngelaHan1), [Adlai Morales-Bravo](https://github.com/AdlaiMB), [Linda Ghunaim](https://github.com/lindgh)
+ > Authors: [Linda Ghunaim](https://github.com/lindgh), [Rawan Hassabelrasoul](https://github.com/rawanhass), [Angela Han](https://github.com/AngelaHan1), [Adlai Morales-Bravo](https://github.com/AdlaiMB)
 
 ## Project Description
  > Synopsis: In this choose your own adventure story, you'll embark on a mission to unmask the killer that has been terrorizing a town you have just stumbled into. Make decisions that could lead you to victory or death. 
